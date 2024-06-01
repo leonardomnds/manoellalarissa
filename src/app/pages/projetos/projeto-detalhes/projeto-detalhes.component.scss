@@ -1,0 +1,815 @@
+@import '/src/assets/scss/bootstrap-utils.scss';
+
+.image-wrapper {
+  max-height: 500px;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-projeto:not(:last-child)::after {
+  content: ' . ';
+}
+
+.grid {
+  display: grid;
+  width: 100%;
+  overflow: hidden;
+  grid-template-columns: repeat(8, 1fr);
+  grid-gap: 16px;
+
+  figure {
+    margin: 0;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &.dolce-vitta,
+  &.brisa-da-mata,
+  &.ape-do-musico,
+  &.vila-neoclassica,
+  &.la-fontana {
+    grid-template-rows: repeat(21, 4vw);
+
+    .imagem_1 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 1;
+      grid-row-end: 9;
+    }
+
+    .imagem_2 {
+      grid-column-start: 5;
+      grid-column-end: 9;
+      grid-row-start: 1;
+      grid-row-end: 5;
+    }
+
+    .imagem_3 {
+      grid-column-start: 5;
+      grid-column-end: 9;
+      grid-row-start: 5;
+      grid-row-end: 9;
+    }
+
+    .imagem_4 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 9;
+      grid-row-end: 13;
+    }
+
+    .imagem_5 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 13;
+      grid-row-end: 17;
+    }
+
+    .imagem_6 {
+      grid-column-start: 5;
+      grid-column-end: 9;
+      grid-row-start: 9;
+      grid-row-end: 17;
+    }
+
+    .imagem_7 {
+      grid-column-start: 1;
+      grid-column-end: 9;
+      grid-row-start: 17;
+      grid-row-end: 22;
+    }
+  }
+
+  &.casa-das-papoulas {
+    grid-template-rows: repeat(17, 4vw);
+
+    .imagem_1 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 1;
+      grid-row-end: 9;
+    }
+
+    .imagem_2 {
+      grid-column-start: 5;
+      grid-column-end: 9;
+      grid-row-start: 1;
+      grid-row-end: 9;
+    }
+
+    .imagem_3 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 9;
+      grid-row-end: 13;
+    }
+
+    .imagem_4 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 13;
+      grid-row-end: 17;
+    }
+
+    .imagem_5 {
+      grid-column-start: 5;
+      grid-column-end: 9;
+      grid-row-start: 9;
+      grid-row-end: 17;
+    }
+  }
+
+  &.rodoviaria,
+  &.academia-da-saude,
+  &.monumento-fundadores {
+    grid-template-rows: repeat(8, 4vw);
+
+    .imagem_1 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 1;
+      grid-row-end: 9;
+    }
+
+    .imagem_2 {
+      grid-column-start: 5;
+      grid-column-end: 9;
+      grid-row-start: 1;
+      grid-row-end: 5;
+    }
+
+    .imagem_3 {
+      grid-column-start: 5;
+      grid-column-end: 9;
+      grid-row-start: 5;
+      grid-row-end: 9;
+    }
+  }
+
+  &.chale-do-campo,
+  &.ape-downtown,
+  &.fixar,
+  &.casa-dos-porticos,
+  &.contemporanea,
+  &.casa-das-palmeiras {
+    grid-template-rows: repeat(17, 4vw);
+
+    .imagem_1 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 1;
+      grid-row-end: 9;
+    }
+
+    .imagem_2 {
+      grid-column-start: 5;
+      grid-column-end: 9;
+      grid-row-start: 1;
+      grid-row-end: 5;
+    }
+
+    .imagem_3 {
+      grid-column-start: 5;
+      grid-column-end: 9;
+      grid-row-start: 5;
+      grid-row-end: 9;
+    }
+
+    .imagem_4 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 9;
+      grid-row-end: 13;
+    }
+
+    .imagem_5 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 13;
+      grid-row-end: 17;
+    }
+
+    .imagem_6 {
+      grid-column-start: 5;
+      grid-column-end: 9;
+      grid-row-start: 9;
+      grid-row-end: 17;
+    }
+  }
+
+
+  &.lola-kafe,
+  &.casa-alecrim,
+  &.restaurante-pantanal-cascavel {
+    grid-template-rows: repeat(27, 4vw);
+
+    .imagem_1 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 1;
+      grid-row-end: 9;
+    }
+
+    .imagem_2 {
+      grid-column-start: 5;
+      grid-column-end: 9;
+      grid-row-start: 1;
+      grid-row-end: 9;
+    }
+
+    .imagem_3 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 9;
+      grid-row-end: 13;
+    }
+
+    .imagem_4 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 13;
+      grid-row-end: 17;
+    }
+
+    .imagem_5 {
+      grid-column-start: 5;
+      grid-column-end: 9;
+      grid-row-start: 9;
+      grid-row-end: 17;
+    }
+
+    .imagem_6 {
+      grid-column-start: 1;
+      grid-column-end: 4;
+      grid-row-start: 17;
+      grid-row-end: 22;
+    }
+
+    .imagem_7 {
+      grid-column-start: 4;
+      grid-column-end: 6;
+      grid-row-start: 17;
+      grid-row-end: 22;
+    }
+
+    .imagem_8 {
+      grid-column-start: 6;
+      grid-column-end: 9;
+      grid-row-start: 17;
+      grid-row-end: 22;
+    }
+
+    .imagem_9 {
+      grid-column-start: 1;
+      grid-column-end: 9;
+      grid-row-start: 22;
+      grid-row-end: 28;
+    }
+
+    @include media-breakpoint-up(md) {
+      .imagem_6 {
+        padding-right: 36px;
+      }
+
+      .imagem_8 {
+        padding-left: 36px;
+      }
+
+      .imagem_7 {
+        margin: 0 -36px;
+      }
+    }
+  }
+
+  &.casa-rio {
+    grid-template-rows: repeat(30, 4vw);
+
+    .imagem_1 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 1;
+      grid-row-end: 9;
+    }
+
+    .imagem_2 {
+      grid-column-start: 5;
+      grid-column-end: 9;
+      grid-row-start: 1;
+      grid-row-end: 9;
+    }
+
+    .imagem_3 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 9;
+      grid-row-end: 13;
+    }
+
+    .imagem_4 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 13;
+      grid-row-end: 17;
+    }
+
+    .imagem_5 {
+      grid-column-start: 5;
+      grid-column-end: 9;
+      grid-row-start: 9;
+      grid-row-end: 17;
+    }
+
+    .imagem_6 {
+      grid-column-start: 1;
+      grid-column-end: 9;
+      grid-row-start: 17;
+      grid-row-end: 22;
+    }
+
+    .imagem_7 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 22;
+      grid-row-end: 26;
+    }
+
+    .imagem_8 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 26;
+      grid-row-end: 31;
+    }
+
+    .imagem_9 {
+      grid-column-start: 5;
+      grid-column-end: 9;
+      grid-row-start: 22;
+      grid-row-end: 31;
+    }
+  }
+
+  &.a-primeira,
+  &.edificio-aurelio,
+  &.restaurante-pantanal {
+    grid-template-rows: repeat(21, 4vw);
+
+    .imagem_1 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 1;
+      grid-row-end: 9;
+    }
+
+    .imagem_2 {
+      grid-column-start: 5;
+      grid-column-end: 9;
+      grid-row-start: 1;
+      grid-row-end: 5;
+    }
+
+    .imagem_3 {
+      grid-column-start: 5;
+      grid-column-end: 9;
+      grid-row-start: 5;
+      grid-row-end: 9;
+    }
+
+    .imagem_4 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 9;
+      grid-row-end: 13;
+    }
+
+    .imagem_5 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 13;
+      grid-row-end: 17;
+    }
+
+    .imagem_6 {
+      grid-column-start: 5;
+      grid-column-end: 9;
+      grid-row-start: 9;
+      grid-row-end: 17;
+    }
+
+    .imagem_7 {
+      grid-column-start: 1;
+      grid-column-end: 4;
+      grid-row-start: 17;
+      grid-row-end: 22;
+    }
+
+    .imagem_8 {
+      grid-column-start: 4;
+      grid-column-end: 6;
+      grid-row-start: 17;
+      grid-row-end: 22;
+    }
+
+    .imagem_9 {
+      grid-column-start: 6;
+      grid-column-end: 9;
+      grid-row-start: 17;
+      grid-row-end: 22;
+    }
+
+    @include media-breakpoint-up(md) {
+      .imagem_7 {
+        padding-right: 36px;
+      }
+
+      .imagem_9 {
+        padding-left: 36px;
+      }
+
+      .imagem_8 {
+        margin: 0 -36px;
+      }
+    }
+  }
+
+  &.casa-country {
+    grid-template-rows: repeat(31, 4vw);
+
+    .imagem_1 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 1;
+      grid-row-end: 9;
+    }
+
+    .imagem_2 {
+      grid-column-start: 5;
+      grid-column-end: 9;
+      grid-row-start: 1;
+      grid-row-end: 5;
+    }
+
+    .imagem_3 {
+      grid-column-start: 5;
+      grid-column-end: 9;
+      grid-row-start: 5;
+      grid-row-end: 9;
+    }
+
+    .imagem_4 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 9;
+      grid-row-end: 13;
+    }
+
+    .imagem_5 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 13;
+      grid-row-end: 17;
+    }
+
+    .imagem_6 {
+      grid-column-start: 5;
+      grid-column-end: 9;
+      grid-row-start: 9;
+      grid-row-end: 17;
+    }
+
+    .imagem_7 {
+      grid-column-start: 1;
+      grid-column-end: 9;
+      grid-row-start: 17;
+      grid-row-end: 24;
+    }
+
+    .imagem_8 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 24;
+      grid-row-end: 28;
+    }
+
+    .imagem_9 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 28;
+      grid-row-end: 32;
+    }
+
+    .imagem_10 {
+      grid-column-start: 5;
+      grid-column-end: 9;
+      grid-row-start: 24;
+      grid-row-end: 32;
+    }
+  }
+
+  &.drei-schritte,
+  &.centro-odontologico-lago {
+    grid-template-rows: repeat(28, 4vw);
+
+    .imagem_1 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 1;
+      grid-row-end: 9;
+    }
+
+    .imagem_2 {
+      grid-column-start: 5;
+      grid-column-end: 9;
+      grid-row-start: 1;
+      grid-row-end: 5;
+    }
+
+    .imagem_3 {
+      grid-column-start: 5;
+      grid-column-end: 9;
+      grid-row-start: 5;
+      grid-row-end: 9;
+    }
+
+    .imagem_4 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 9;
+      grid-row-end: 13;
+    }
+
+    .imagem_5 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 13;
+      grid-row-end: 17;
+    }
+
+    .imagem_6 {
+      grid-column-start: 5;
+      grid-column-end: 9;
+      grid-row-start: 9;
+      grid-row-end: 17;
+    }
+
+    .imagem_7 {
+      grid-column-start: 1;
+      grid-column-end: 4;
+      grid-row-start: 17;
+      grid-row-end: 23;
+    }
+
+    .imagem_8 {
+      grid-column-start: 4;
+      grid-column-end: 6;
+      grid-row-start: 17;
+      grid-row-end: 23;
+    }
+
+    .imagem_9 {
+      grid-column-start: 6;
+      grid-column-end: 9;
+      grid-row-start: 17;
+      grid-row-end: 23;
+    }
+
+    .imagem_10 {
+      grid-column-start: 1;
+      grid-column-end: 9;
+      grid-row-start: 23;
+      grid-row-end: 29;
+    }
+
+    @include media-breakpoint-up(md) {
+      .imagem_7 {
+        padding-right: 36px;
+      }
+
+      .imagem_9 {
+        padding-left: 36px;
+      }
+
+      .imagem_8 {
+        margin: 0 -36px;
+      }
+    }
+  }
+
+  &.my-way {
+    grid-template-rows: repeat(39, 4vw);
+
+    .imagem_1 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 1;
+      grid-row-end: 9;
+    }
+
+    .imagem_2 {
+      grid-column-start: 5;
+      grid-column-end: 9;
+      grid-row-start: 1;
+      grid-row-end: 5;
+    }
+
+    .imagem_3 {
+      grid-column-start: 5;
+      grid-column-end: 9;
+      grid-row-start: 5;
+      grid-row-end: 9;
+    }
+
+    .imagem_4 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 9;
+      grid-row-end: 13;
+    }
+
+    .imagem_5 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 13;
+      grid-row-end: 17;
+    }
+
+    .imagem_6 {
+      grid-column-start: 5;
+      grid-column-end: 9;
+      grid-row-start: 9;
+      grid-row-end: 17;
+    }
+
+    .imagem_7 {
+      grid-column-start: 1;
+      grid-column-end: 9;
+      grid-row-start: 17;
+      grid-row-end: 24;
+    }
+
+    .imagem_8 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 24;
+      grid-row-end: 28;
+    }
+
+    .imagem_9 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 28;
+      grid-row-end: 32;
+    }
+
+    .imagem_10 {
+      grid-column-start: 5;
+      grid-column-end: 9;
+      grid-row-start: 24;
+      grid-row-end: 32;
+    }
+
+    .imagem_11 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 32;
+      grid-row-end: 40;
+    }
+
+    .imagem_12 {
+      grid-column-start: 5;
+      grid-column-end: 9;
+      grid-row-start: 32;
+      grid-row-end: 36;
+    }
+
+    .imagem_13 {
+      grid-column-start: 5;
+      grid-column-end: 9;
+      grid-row-start: 36;
+      grid-row-end: 40;
+    }
+  }
+
+  &.casa-41 {
+    grid-template-rows: repeat(37, 4vw);
+
+    .imagem_1 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 1;
+      grid-row-end: 9;
+    }
+
+    .imagem_2 {
+      grid-column-start: 5;
+      grid-column-end: 9;
+      grid-row-start: 1;
+      grid-row-end: 5;
+    }
+
+    .imagem_3 {
+      grid-column-start: 5;
+      grid-column-end: 9;
+      grid-row-start: 5;
+      grid-row-end: 9;
+    }
+
+    .imagem_4 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 9;
+      grid-row-end: 13;
+    }
+
+    .imagem_5 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 13;
+      grid-row-end: 17;
+    }
+
+    .imagem_6 {
+      grid-column-start: 5;
+      grid-column-end: 9;
+      grid-row-start: 9;
+      grid-row-end: 17;
+    }
+
+    .imagem_7 {
+      grid-column-start: 1;
+      grid-column-end: 4;
+      grid-row-start: 17;
+      grid-row-end: 23;
+    }
+
+    .imagem_8 {
+      grid-column-start: 4;
+      grid-column-end: 6;
+      grid-row-start: 17;
+      grid-row-end: 23;
+    }
+
+    .imagem_9 {
+      grid-column-start: 6;
+      grid-column-end: 9;
+      grid-row-start: 17;
+      grid-row-end: 23;
+    }
+
+    .imagem_10 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 23;
+      grid-row-end: 27;
+    }
+
+    .imagem_11 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 27;
+      grid-row-end: 31;
+    }
+
+    .imagem_12 {
+      grid-column-start: 5;
+      grid-column-end: 9;
+      grid-row-start: 23;
+      grid-row-end: 31;
+    }
+
+    .imagem_13 {
+      grid-column-start: 1;
+      grid-column-end: 9;
+      grid-row-start: 31;
+      grid-row-end: 38;
+    }
+
+    @include media-breakpoint-up(md) {
+      .imagem_7 {
+        padding-right: 36px;
+      }
+
+      .imagem_9 {
+        padding-left: 36px;
+      }
+
+      .imagem_8 {
+        margin: 0 -36px;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}

@@ -1,0 +1,16 @@
+<img [src]="imageUrl" alt="Equipe" class="w-100">
+
+<h1 class="titulo mt-4 mb-3">Equipe</h1>
+
+<div class="row g-3">
+  <ng-container *ngFor="let pessoa of equipe">
+    <div class="col-md-6 d-flex flex-column gap-1">
+      <span class="fw-semibold">
+        {{ pessoa.nome }} - {{ pessoa.cargo }}
+      </span>
+      <span>
+        {{ pessoa.descricao }}
+      </span>
+    </div>
+  </ng-container>
+</div>

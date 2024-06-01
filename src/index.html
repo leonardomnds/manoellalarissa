@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Thea Prado - Arquitetura</title>
+    <base href="/">
+    <meta name="googlebot" content="notranslate">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Leonardo Mendes | @leonardomendes_">
+    <meta name="description" lang="pt"
+      content="Théa Prado Arquiteta Arquitetura. Projetos, fotos e imagens do trabalho no escritório de arquitetura em Toledo, oeste do Paraná">
+    <meta name="keywords" lang="pt"
+      content="escritório, escritorio, theaprado, thea, Théa Prado, arquiteta, arquitetura, toledo, paraná, brasil, projetos, arq.thea, residencial, comercial, interiores, paisagismo">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+  </head>
+
+  <body class="styled-scroll-y">
+    <app-root>
+      <style>
+        .loading-wrapper {
+          position: fixed;
+          inset: 0;
+          display: flex;
+          gap: 4px;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .loader {
+          width: 140px;
+          height: 8px;
+          border-radius: 4px;
+          color: #990F0F;
+          border: 1px solid;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .loader::before {
+          content: "";
+          position: absolute;
+          margin: 2px;
+          width: 14px;
+          top: 0;
+          bottom: 0;
+          left: -20px;
+          border-radius: inherit;
+          background: currentColor;
+          box-shadow: -10px 0 12px 3px currentColor;
+          clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 95%, -30px 50%);
+          animation: run-circle 1s infinite linear;
+        }
+
+        @keyframes run-circle {
+          100% {
+            left: calc(100% + 20px)
+          }
+        }
+      </style>
+
+      <div class="loading-wrapper">
+        <div class="loader"></div>
+      </div>
+    </app-root>
+  </body>
+
+</html>

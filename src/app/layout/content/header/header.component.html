@@ -1,0 +1,35 @@
+<header class="col">
+  <div class="logo-container">
+    <a [routerLink]="['/']">
+      <img src="assets/images/logo.png" alt="Logo">
+    </a>
+  </div>
+
+  <a target="_blank" [href]="environment.instagramUrl" class="instagram text-lowercase hover-underline">
+    &#64;arquiteturatheaprado
+  </a>
+
+  <nav class="fw-semibold menu-desktop">
+    <a class="hover-underline" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+      [routerLink]="['/']">Projetos</a>
+    <a class="hover-underline" routerLinkActive="active" [routerLink]="['/equipe']">Equipe</a>
+    <a class="hover-underline" routerLinkActive="active" [routerLink]="['/espaco']">Espaço</a>
+    <a class="hover-underline" routerLinkActive="active" [routerLink]="['/servicos']">O que fazemos</a>
+    <a class="hover-underline" routerLinkActive="active" [routerLink]="['/livro']">Livro</a>
+    <span class="hover-underline cursor" (click)="goToFooter()">Contato</span>
+  </nav>
+
+  <div ngbDropdown placement="bottom-end" class="menu-mobile">
+    <button type="button" class="btn" id="menuMobile" ngbDropdownToggle aria-label="Menu">
+      <fa-icon [icon]="icons.menu" size="2x" />
+    </button>
+    <div ngbDropdownMenu aria-labelledby="menuMobile">
+      <a ngbDropdownItem [routerLink]="['/']">Projetos</a>
+      <a ngbDropdownItem [routerLink]="['/equipe']">Equipe</a>
+      <a ngbDropdownItem [routerLink]="['/espaco']">Espaço</a>
+      <a ngbDropdownItem [routerLink]="['/servicos']">O que fazemos</a>
+      <a ngbDropdownItem [routerLink]="['/livro']">Livro</a>
+      <button ngbDropdownItem (click)="goToFooter()">Contato</button>
+    </div>
+  </div>
+</header>

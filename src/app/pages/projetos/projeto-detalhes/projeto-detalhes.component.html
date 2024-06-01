@@ -1,0 +1,34 @@
+<div class="image-wrapper">
+  <img [src]="projeto.images[0]" [alt]="projeto.nome" class="w-100">
+</div>
+
+<div class="d-flex flex-column gap-3 my-4">
+  <h1 class="titulo m-0">
+    {{ projeto.nome }}
+  </h1>
+
+  <span class="fw-semibold">
+    <span class="item-projeto" *ngIf="projeto.isProjetoArquitetonico">Arquitetônico</span>
+    <span class="item-projeto" *ngIf="projeto.isProjetoInteriores">Interiores</span>
+    <span class="item-projeto" *ngIf="projeto.isProjetoPaisagismo">Paisagismo</span>
+    <span class="item-projeto" *ngIf="projeto.isObraPublica">Obra Pública</span>
+  </span>
+
+  <span class="fw-semibold">
+    <container-element [ngSwitch]="projeto.tipoProjeto">
+      <ng-container *ngSwitchCase="TipoProjeto.Comercial">Comercial</ng-container>
+      <ng-container *ngSwitchCase="TipoProjeto.Residencial">Residencial</ng-container>
+      <ng-container *ngSwitchCase="TipoProjeto.Publico">Público</ng-container>
+      <ng-container *ngSwitchCase="TipoProjeto.InstitucionalPublico">Institucional e Público</ng-container>
+    </container-element>
+    - {{ projeto.anoProjeto }}
+  </span>
+</div>
+
+<div class="grid {{projeto.path}}">
+  <ng-container *ngFor="let url of projeto.images; let index = index;">
+    <figure *ngIf="!!index" class="imagem imagem_{{ index }}">
+      <img [src]="url" alt="Imagem {{ index }}">
+    </figure>
+  </ng-container>
+</div>

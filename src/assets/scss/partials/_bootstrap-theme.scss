@@ -1,0 +1,42 @@
+$primary:     #990F0F;
+$secondary:   #000000;
+
+/* Personalização do Bootstrap */
+
+/* Body */
+// $font-size-base:              0.875rem;
+$line-height-base:            1.4;
+$body-bg:                     #FFF;
+$body-color:                  #000;
+
+/* Negative Margin */
+$enable-negative-margins: true;
+
+$min-contrast-ratio: 2.0;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary
+);
+
+/* Link */
+$link-color:                        $body-color !default;
+
+/* Tooltip */
+$tooltip-bg:                        $primary;
+$tooltip-max-width:                 400px;
+
+
+/* Card */
+$card-bg:                           #fff; /* <- Bug versão 5.2 */
+
+/* Modal */
+$modal-content-bg:                  #fff;
+
+/* List Group */
+$list-group-bg:                     #fff; /* <- Bug versão 5.2 */
+
+:root {
+  --primary: #{$primary};
+  --secondary: #{$secondary};
+}

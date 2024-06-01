@@ -1,0 +1,67 @@
+@import '/src/assets/scss/bootstrap-utils.scss';
+
+header {
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 0px 24px !important;
+  gap: 24px;
+}
+
+.logo-container img {
+  height: 180px;
+  align-self: stretch;
+}
+
+header nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 20px;
+  text-transform: uppercase;
+
+  .active {
+    color: var(--primary);
+  }
+}
+
+.menu-mobile {
+  display: none;
+
+  .dropdown-toggle {
+    color: var(--primary);
+    border: none !important;
+    padding: 0;
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .instagram {
+    display: none;
+  }
+
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: -24px !important;
+  }
+
+  .logo-container img {
+    height: 80px;
+  }
+
+  .menu-mobile {
+    display: inline;
+  }
+
+  .menu-desktop {
+    display: none;
+  }
+}
+

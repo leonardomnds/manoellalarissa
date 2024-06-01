@@ -1,0 +1,19 @@
+footer {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  padding: 140px 24px 36px;
+}
+
+#contato .info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  line-height: 1;
+}
+
+#endereco {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
