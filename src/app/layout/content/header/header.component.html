@@ -1,35 +1,15 @@
-<header class="col">
+<header class="page-wrapper">
   <div class="logo-container">
     <a [routerLink]="['/']">
-      <img src="assets/images/logo.png" alt="Logo">
+      <img src="assets/images/logo.svg" alt="Logo">
     </a>
   </div>
 
-  <a target="_blank" [href]="environment.instagramUrl" class="instagram text-lowercase hover-underline">
-    &#64;arquiteturatheaprado
-  </a>
-
   <nav class="fw-semibold menu-desktop">
-    <a class="hover-underline" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
-      [routerLink]="['/']">Projetos</a>
-    <a class="hover-underline" routerLinkActive="active" [routerLink]="['/equipe']">Equipe</a>
-    <a class="hover-underline" routerLinkActive="active" [routerLink]="['/espaco']">Espaço</a>
-    <a class="hover-underline" routerLinkActive="active" [routerLink]="['/servicos']">O que fazemos</a>
-    <a class="hover-underline" routerLinkActive="active" [routerLink]="['/livro']">Livro</a>
-    <span class="hover-underline cursor" (click)="goToFooter()">Contato</span>
+    <a href="#" class="hover-underline">Início</a>
+    <a href="#areas-atuacao" class="hover-underline">Áreas de Atuação</a>
+    <a href="#como-funciona" class="hover-underline">Como Funciona</a>
+    <a href="#beneficios" class="hover-underline">Benefícios</a>
+    <a href="#sobre" class="hover-underline">A Psicóloga</a>
   </nav>
-
-  <div ngbDropdown placement="bottom-end" class="menu-mobile">
-    <button type="button" class="btn" id="menuMobile" ngbDropdownToggle aria-label="Menu">
-      <fa-icon [icon]="icons.menu" size="2x" />
-    </button>
-    <div ngbDropdownMenu aria-labelledby="menuMobile">
-      <a ngbDropdownItem [routerLink]="['/']">Projetos</a>
-      <a ngbDropdownItem [routerLink]="['/equipe']">Equipe</a>
-      <a ngbDropdownItem [routerLink]="['/espaco']">Espaço</a>
-      <a ngbDropdownItem [routerLink]="['/servicos']">O que fazemos</a>
-      <a ngbDropdownItem [routerLink]="['/livro']">Livro</a>
-      <button ngbDropdownItem (click)="goToFooter()">Contato</button>
-    </div>
-  </div>
 </header>

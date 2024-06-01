@@ -8,28 +8,8 @@ const routes: Routes = [
     component: ContentComponent,
     children: [
       {
-        path: 'espaco',
-        loadChildren: () => import('@pages/espaco/espaco.module').then((m) => m.EspacoModule),
-        title: 'Espaço'
-      },
-      {
-        path: 'equipe',
-        loadChildren: () => import('@pages/equipe/equipe.module').then((m) => m.EquipeModule),
-        title: 'Equipe'
-      },
-      {
-        path: 'servicos',
-        loadChildren: () => import('@pages/servicos/servicos.module').then((m) => m.ServicosModule),
-        title: 'Serviços'
-      },
-      {
-        path: 'livro',
-        loadChildren: () => import('@pages/livro/livro.module').then((m) => m.LivroModule),
-        title: 'Livro'
-      },
-      {
         path: '',
-        loadChildren: () => import('@pages/projetos/projetos.module').then((m) => m.ProjetosModule),
+        loadChildren: () => import('@pages/home/home.module').then((m) => m.HomeModule),
       },
       {
         path: '**',

@@ -1,67 +1,37 @@
 @import '/src/assets/scss/bootstrap-utils.scss';
 
-header {
-  box-sizing: border-box;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 8px 0px 24px !important;
-  gap: 24px;
-}
-
-.logo-container img {
-  height: 180px;
-  align-self: stretch;
-}
-
-header nav {
-  display: inline-flex;
-  align-items: center;
-  gap: 24px;
-  font-size: 20px;
-  text-transform: uppercase;
-
-  .active {
-    color: var(--primary);
-  }
-}
-
-.menu-mobile {
-  display: none;
-
-  .dropdown-toggle {
-    color: var(--primary);
-    border: none !important;
-    padding: 0;
-
-    &::after {
-      display: none;
-    }
-  }
-}
-
-@include media-breakpoint-down(lg) {
-  .instagram {
-    display: none;
-  }
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--rosa-escuro);
 
   header {
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: -24px !important;
-  }
-
-  .logo-container img {
+    box-sizing: border-box;
+    width: 100%;
     height: 80px;
-  }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px !important;
+    gap: 16px;
 
-  .menu-mobile {
-    display: inline;
-  }
+    .logo-container img {
+      height: 100%;
+    }
 
-  .menu-desktop {
-    display: none;
+    nav {
+      display: inline-flex;
+      align-items: center;
+      gap: 24px;
+      font-size: 20px;
+      text-transform: uppercase;
+    
+      .active {
+        color: var(--primary);
+      }
+    }
   }
 }
 

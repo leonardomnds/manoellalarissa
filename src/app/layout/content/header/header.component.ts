@@ -15,7 +15,7 @@ export class HeaderComponent {
   icons = ICONS;
   environment = environment;
 
-  @HostBinding('class') elementClass = 'row g-0';
+  @HostBinding('class') elementClass = 'site-header';
   @ViewChild(NgbDropdown, { static: true})
   private menuToggle!: NgbDropdown;
 

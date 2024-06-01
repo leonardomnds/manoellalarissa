@@ -13,6 +13,6 @@ export class PageTitleService extends TitleStrategy {
 
   override updateTitle(snapshot: RouterStateSnapshot): void {
     const newTitle = this.buildTitle(snapshot) ?? '';
-    this.title.setTitle(`${newTitle}${newTitle ? ' | ' : ''}Thea Prado Arquitetura`.trim());
+    this.title.setTitle(`${newTitle}${newTitle ? ' | ' : ''}Psicóloga Manoella Larissa`.trim());
   }
 }
