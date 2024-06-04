@@ -4,10 +4,6 @@ html, body {
   -webkit-font-smoothing: antialiased;
 }
 
-* {
-  text-transform: uppercase !important;
-}
-
 // Scroll personalizado
 .styled-scroll-y {
   $scrollbar-bg: rgba(0, 0, 0, 0.2);
@@ -56,16 +52,4 @@ a,
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.tooltip {
-  font-weight: 500 !important;
-
-  &.bs-tooltip-top {
-    margin-bottom: -8px !important;
-  }
-
-  &.bs-tooltip-bottom {
-    margin-top: -8px !important;
-  }
 }
