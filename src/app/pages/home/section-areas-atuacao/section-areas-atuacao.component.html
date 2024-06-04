@@ -1,0 +1,51 @@
+<section class="areas-atuacao position-relative">
+  <div class="page-wrapper">
+    <div class="center flex-column">
+      <h1>Áreas de Atuação</h1>
+      <span>
+        Tratamentos e demandas mais frequentes que atendo atualmente
+      </span>
+
+      <div class="row g-3 my-3">
+        <ng-container *ngFor="let areaAtuacao of areasAtuacao">
+          <div class="col-md-4">
+            <div class="card h-100">
+              <div class="icon">
+                <fa-icon [icon]="brainIcon" size="3x" />
+              </div>
+
+              <div class="card-body">
+                <h4 class="card-title">
+                  {{ areaAtuacao.titulo }}
+                </h4>
+
+                <span [innerHTML]="areaAtuacao.descricao"></span>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+
+      <div class="center">
+        <app-agendar-consulta-button [isEscuro]="true" />
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="background-video-wrapper">
+    <iframe #backgroundFrame allowfullscreen frameBorder="0" title="Background Video"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+
+    <div class="page-wrapper content center">
+      <h1>Posso ajudar você!</h1>
+      <span>
+        Caso você se identifique com algum desses sintomas ou alguma dessas situações, saiba que a Psicoterapia
+        Junguiana pode ser de grande ajuda para transformar a sua vida de maneira significativa.
+      </span>
+
+      <app-agendar-consulta-button />
+    </div>
+  </div> -->
+
+  <app-separator-shape [isEscuro]="true" />
+</section>

@@ -1,16 +1,18 @@
 @import '/src/assets/scss/bootstrap-utils.scss';
 
 .site-header {
+  z-index: 2000;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background-color: var(--rosa-escuro);
+  backdrop-filter: blur(5px);
+  background-color: rgba(var(--rosa-escuro-rgb), 0.85);
 
   header {
     box-sizing: border-box;
     width: 100%;
-    height: 80px;
+    height: var(--header-height);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -22,12 +24,16 @@
     }
 
     nav {
+      font-weight: 500;
       display: inline-flex;
       align-items: center;
-      gap: 24px;
-      font-size: 20px;
-      text-transform: uppercase;
-    
+      gap: 16px;
+
+      a {
+        color: var(--rosa-claro);
+        text-wrap: nowrap;
+      }
+
       .active {
         color: var(--primary);
       }
@@ -35,3 +41,12 @@
   }
 }
 
+@media screen and (max-width: 799px) {
+  .site-header {
+    header {
+      .menu-desktop {
+        display: none;
+      }
+    }
+  }
+}

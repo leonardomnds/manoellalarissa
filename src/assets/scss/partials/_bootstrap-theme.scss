@@ -6,6 +6,14 @@ $verde:        #b3eeab;
 $verde-claro:  #c7f3bd;
 $verde-escuro: #5cc163;
 
+$rosa-rgb:        255, 185, 196;
+$rosa-claro-rgb:  255, 232, 235;
+$rosa-escuro-rgb: 201, 120, 133;
+
+$verde-rgb:        179, 238, 171;
+$verde-claro-rgb:  199, 243, 189;
+$verde-escuro-rgb: 92, 193, 99;
+
 /* Personalização do Bootstrap */
 
 /* Body */
@@ -50,6 +58,8 @@ $modal-content-bg:                  #fff;
 $list-group-bg:                     #fff; /* <- Bug versão 5.2 */
 
 :root {
+  --header-height: 80px;
+
   --rosa: #{$rosa};
   --rosa-claro: #{$rosa-claro};
   --rosa-escuro: #{$rosa-escuro};
@@ -57,4 +67,12 @@ $list-group-bg:                     #fff; /* <- Bug versão 5.2 */
   --verde: #{$verde};
   --verde-claro: #{$verde-claro};
   --verde-escuro: #{$verde-escuro};
+
+  --rosa-rgb: #{$rosa-rgb};
+  --rosa-claro-rgb: #{$rosa-claro-rgb};
+  --rosa-escuro-rgb: #{$rosa-escuro-rgb};
+
+  --verde-rgb: #{$verde-rgb};
+  --verde-claro-rgb: #{$verde-claro-rgb};
+  --verde-escuro-rgb: #{$verde-escuro-rgb};
 }
