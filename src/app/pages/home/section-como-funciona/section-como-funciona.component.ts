@@ -5,4 +5,8 @@ import { Component } from '@angular/core';
   templateUrl: './section-como-funciona.component.html',
   styleUrls: ['./section-como-funciona.component.scss']
 })
-export class SectionComoFuncionaComponent {}
+export class SectionComoFuncionaComponent {
+
+  cabecaItems: string[] = ['Escuta Clínica', 'Livre Associação', 'Técnicas Verbais', 'Análise de Sonhos', 'Imaginação Ativa', 'Arquétipos'];
+
+}

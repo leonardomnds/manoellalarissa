@@ -1,6 +1,47 @@
 <section class="como-funciona position-relative">
   <div class="page-wrapper">
-    Como funciona
+    <div class="row g-3">
+      <div class="col-lg-6">
+        <h5 class="text-uppercase">
+          Como funciona
+        </h5>
+        <h1>
+          Abordagem Psicanalítica
+        </h1>
+        <p>
+          A psicanálise preocupa-se em entender como funciona a mente humana, partindo do princípio de que muitos dos
+          processos psíquicos são inconscientes. Na abordagem psicanalítica, nossas emoções e atitudes são o resultado
+          de fatores dos quais não temos consciência.
+        </p>
+        <p>
+          O paciente é levado a refletir e se enxergar de outra maneira durante a abordagem psicanalítica. Com o auxílio
+          do psicólogo, durante as sessões de análise, o paciente passa a conhecer melhor a própria mente e a
+          identificar a razão de seus sentimentos, conflitos e emoções.
+        </p>
+        <p>
+          A pessoa é vista como um todo na abordagem psicanalítica. Não são considerados somente os sintomas e
+          circunstâncias atuais, mas é feito um acompanhamento muitas vezes durante anos, observando o cotidiano do
+          paciente e suas reações diante de várias situações e, também, suas relações interpessoais.
+        </p>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="image-wrapper">
+          <img data-src="assets/images/cabeca.png" alt="Cabeça">
+          <div class="items">
+            <ng-container *ngFor="let item of cabecaItems; let index = index;">
+              <div class="item item{{index + 1}}">
+                {{ item }}
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+
+      <div class="col center pt-3">
+        <app-agendar-consulta-button />
+      </div>
+    </div>
   </div>
 
   <app-separator-shape />
