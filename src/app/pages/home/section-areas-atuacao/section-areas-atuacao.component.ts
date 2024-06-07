@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { faBrain } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -6,7 +6,7 @@ import { faBrain } from '@fortawesome/free-solid-svg-icons';
   templateUrl: './section-areas-atuacao.component.html',
   styleUrls: ['./section-areas-atuacao.component.scss']
 })
-export class SectionAreasAtuacaoComponent implements AfterViewInit {
+export class SectionAreasAtuacaoComponent {
 
   brainIcon = faBrain;
 
@@ -49,17 +49,7 @@ export class SectionAreasAtuacaoComponent implements AfterViewInit {
     }
   ];
 
-  @ViewChild('backgroundFrame', { static: true })
-  private backgroundFrame!: ElementRef<HTMLIFrameElement>;
-
-  ngAfterViewInit(): void {
-    this.backgroundFrame.nativeElement.src = `${YOUTUBE_BASE_URL}/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&playlist=${YOUTUBE_VIDEO_ID}&loop=1&controls=0&playsinline=1&rel=0&showinfo=0&modestbranding=1`;
-  }
-
 }
-
-const YOUTUBE_BASE_URL = 'https://www.youtube.com';
-const YOUTUBE_VIDEO_ID = 'Zny_AImRJPE';
 
 interface AreaAtuacao {
   titulo: string;

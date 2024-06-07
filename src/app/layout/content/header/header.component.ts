@@ -1,13 +1,8 @@
-import { Component, HostBinding, ViewEncapsulation } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent {
-
-  @HostBinding('class') elementClass = 'site-header';
-
-}
+export class HeaderComponent {}

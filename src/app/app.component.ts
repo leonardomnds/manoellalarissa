@@ -1,9 +1,10 @@
-import { Component, DestroyRef, inject } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { filter, map, mergeMap, of } from 'rxjs';
 import { DOCUMENT } from '@angular/common';
+import { Component, DestroyRef, inject } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { FaConfig } from '@fortawesome/angular-fontawesome';
 import { NgbDropdownConfig, NgbTooltipConfig } from '@ng-bootstrap/ng-bootstrap';
+import { filter, mergeMap } from 'rxjs';
 
 @Component({
   selector: 'app-root',
