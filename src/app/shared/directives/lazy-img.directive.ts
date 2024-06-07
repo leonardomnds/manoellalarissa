@@ -1,14 +1,14 @@
 
 import { AfterViewInit, Directive, ElementRef, OnInit, inject } from '@angular/core';
 
-@Directive({ selector: 'img' })
+@Directive({ selector: 'img[data-src]' })
 export class LazyImgDirective implements OnInit, AfterViewInit {
 
   private elementRef: ElementRef<HTMLImageElement> = inject(ElementRef<HTMLImageElement>);
 
   ngOnInit(): void {
     const imgElement = this.elementRef.nativeElement;
-    const originalSrc = imgElement.src || imgElement.getAttribute(DATA_SRC_ATTRIBUTE)!;
+    const originalSrc = imgElement.getAttribute(DATA_SRC_ATTRIBUTE)!;
 
     imgElement.classList.remove(LOADED_CLASS);
     imgElement.setAttribute(DATA_SRC_ATTRIBUTE, originalSrc);
