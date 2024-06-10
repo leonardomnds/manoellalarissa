@@ -1,9 +1,11 @@
 
-import { AfterViewInit, Directive, ElementRef, OnInit, inject } from '@angular/core';
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { AfterViewInit, Directive, ElementRef, OnInit, PLATFORM_ID, inject } from '@angular/core';
 
 @Directive({ selector: 'img[data-src]' })
 export class LazyImgDirective implements OnInit, AfterViewInit {
 
+  private platformId = inject(PLATFORM_ID);
   private elementRef: ElementRef<HTMLImageElement> = inject(ElementRef<HTMLImageElement>);
 
   ngOnInit(): void {
@@ -16,6 +18,8 @@ export class LazyImgDirective implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
+    if (isPlatformServer(this.platformId)) { return; }
+
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
