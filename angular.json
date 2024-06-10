@@ -48,7 +48,7 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "baseHref": "/manoellalarissa/"
+              "baseHref": "/"
             },
             "localhost": {
               "buildOptimizer": false,
