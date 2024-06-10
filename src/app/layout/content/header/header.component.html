@@ -7,11 +7,29 @@
     </div>
 
     <nav class="menu-desktop">
-      <a href="#" class="hover-underline">Início</a>
-      <a href="#areas-atuacao" class="hover-underline">Áreas de Atuação</a>
-      <a href="#como-funciona" class="hover-underline">Como Funciona</a>
-      <a href="#beneficios" class="hover-underline">Benefícios</a>
-      <a href="#sobre" class="hover-underline">A Psicóloga</a>
+      <ng-container *ngTemplateOutlet="menus" />
     </nav>
+
+    <button (click)="abrirMenu(sidebar)" class="menu-mobile btn text-rosa-claro">
+      <fa-icon [icon]="menuIcon" size="2x" />
+    </button>
   </div>
 </header>
+
+<ng-template #menus>
+  <a (click)="fecharMenu()" href="#" class="hover-underline">Início</a>
+  <a (click)="fecharMenu()" href="#areas-atuacao" class="hover-underline">Áreas de Atuação</a>
+  <a (click)="fecharMenu()" href="#como-funciona" class="hover-underline">Como Funciona</a>
+  <a (click)="fecharMenu()" href="#beneficios" class="hover-underline">Benefícios</a>
+  <a (click)="fecharMenu()" href="#sobre" class="hover-underline">A Psicóloga</a>
+  <a (click)="fecharMenu()" href="#contato" class="hover-underline">Contato</a>
+</ng-template>
+
+<ng-template #sidebar let-offcanvas>
+  <div class="offcanvas-header bg-rosa-escuro">
+    <img src="assets/images/logo.svg" alt="Logo">
+  </div>
+  <div class="offcanvas-body bg-rosa-escuro">
+    <ng-container *ngTemplateOutlet="menus" />
+  </div>
+</ng-template>

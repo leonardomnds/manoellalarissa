@@ -1,7 +1,9 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, DestroyRef, ElementRef, ViewChild, ViewChildren, inject } from '@angular/core';
+import { Component, DestroyRef, ElementRef, HostBinding, HostListener, TemplateRef, ViewChild, ViewChildren, inject } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { interval, map } from 'rxjs';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { NgbOffcanvas, NgbOffcanvasRef } from '@ng-bootstrap/ng-bootstrap';
+import { filter, interval, map } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -10,8 +12,13 @@ import { interval, map } from 'rxjs';
 })
 export class HeaderComponent {
 
+  menuIcon = faBars;
+
+  private sidebarRef?: NgbOffcanvasRef;
+
   private document = inject(DOCUMENT);
   private destroyRef = inject(DestroyRef);
+  private sidebarService = inject(NgbOffcanvas);
 
   @ViewChild('logo', { static: true })
   private logoWrapper!: ElementRef<HTMLDivElement>;
@@ -23,6 +30,7 @@ export class HeaderComponent {
           logoWrapper: this.logoWrapper.nativeElement,
           imageHeight: this.document.querySelector<HTMLImageElement>('section.initial .logo')?.height ?? 0
         })),
+        filter(({ imageHeight }) => !!imageHeight),
         takeUntilDestroyed(this.destroyRef)
       )
       .subscribe((data) => {
@@ -35,6 +43,18 @@ export class HeaderComponent {
 
         data.logoWrapper.classList.remove(LOGO_VISIBLE_CLASS);
       });
+  }
+
+  abrirMenu(content: TemplateRef<any>): void {
+    this.sidebarRef = this.sidebarService.open(content, { position: 'end',  });
+  }
+
+  @HostListener('window:resize')
+  fecharMenu(): void {
+    if (!this.sidebarRef) { return; }
+
+    this.sidebarRef.close();
+    this.sidebarRef = undefined;
   }
 
 }

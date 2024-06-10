@@ -1,5 +1,5 @@
 header {
-  z-index: 2000;
+  z-index: 1030;
   position: fixed;
   top: 0;
   left: 0;
@@ -16,6 +16,10 @@ header {
     justify-content: space-between;
     padding: 0 16px !important;
     gap: 16px;
+
+    .menu-mobile {
+      display: none;
+    }
 
     .logo-container {
       opacity: 0;
@@ -50,10 +54,55 @@ header {
   }
 }
 
-@media screen and (max-width: 799px) {
+@media screen and (max-width: 870px) {
   header > div {
     .menu-desktop {
       display: none;
+    }
+
+    .menu-mobile {
+      display: inline-flex;
+
+      &:hover {
+        background-color: rgba(0,0,0,.1);
+      }
+
+      aside {
+        z-index: 3000;
+        position: fixed;
+        width: var(--sidebar-width);
+        top: var(--header-height);
+        bottom: 0;
+        right: 0;
+
+        backdrop-filter: blur(5px);
+        background-color: rgba(var(--rosa-escuro-rgb), 0.85);
+      }
+    }
+  }
+}
+
+::ng-deep .offcanvas  {
+  .offcanvas-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 80%;
+      height: auto;
+    }
+  }
+
+  .offcanvas-body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    a {
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--rosa-claro);
     }
   }
 }
