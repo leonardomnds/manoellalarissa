@@ -2,7 +2,7 @@ import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 
 import { RouterModule, TitleStrategy } from '@angular/router';
-import { PageTitleService } from '@shared/services';
+import { PageTitleService } from '@shared/services/page-title/page-title.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -12,6 +12,7 @@ import localeBrExtra from '@angular/common/locales/extra/pt';
 import localeBr from '@angular/common/locales/pt';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { AnalyticsService } from '@shared/services/analytics/analytics.service';
 
 registerLocaleData(localeBr, 'pt', localeBrExtra);
 
@@ -35,4 +36,10 @@ registerLocaleData(localeBr, 'pt', localeBrExtra);
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+  constructor(private analytics: AnalyticsService) {
+    this.analytics.initialize();
+  }
+
+}
