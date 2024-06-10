@@ -4,9 +4,13 @@ section {
   .card {
     height: 100%;
 
+    .ng-fa-icon {
+      color: var(--rosa-escuro);
+    }
+
     span {
       display: flex;
-      gap: 8px;
+      gap: 12px;
 
       & + span {
         margin-top: 8px;

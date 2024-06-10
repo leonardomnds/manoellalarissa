@@ -18,6 +18,8 @@ section {
       display: flex;
       flex-direction: column;
       gap: 8px;
+      font-weight: 500;
+      color: var(--rosa-claro);
     }
 
     @include media-breakpoint-up(lg) {
@@ -41,7 +43,7 @@ section {
         padding: 8px 16px;
         text-wrap: nowrap;
         border-radius: 6px;
-        font-weight: 500;
+        color: var(--escuro);
         background-color: var(--rosa);
 
         left: 50%;
