@@ -83,6 +83,8 @@ header {
 }
 
 ::ng-deep .offcanvas  {
+  width: 320px !important;
+
   .offcanvas-header {
     display: flex;
     align-items: center;
@@ -100,6 +102,7 @@ header {
     gap: 16px;
 
     a {
+      outline: none;
       font-size: 22px;
       font-weight: 500;
       color: var(--rosa-claro);
