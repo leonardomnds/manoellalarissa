@@ -12,7 +12,7 @@
     "serve:ssr": "node dist/manoellalarissa/server/main.js",
     "build:ssr": "ng build && ng run manoellalarissa:server",
     "prerender": "ng run manoellalarissa:prerender",
-    "deploy": "ng run manoellalarissa:prerender && angular-cli-ghpages --dir=dist/browser --branch=gh-pages"
+    "deploy": "angular-cli-ghpages --dir=dist/browser --branch=gh-pages"
   },
   "private": true,
   "dependencies": {

@@ -5,10 +5,10 @@
         <h3 class="m-0 mb-2">Fale comigo por aqui</h3>
 
         <div class="d-flex align-items-center gap-3">
-          <a [href]="environment.whatsappUrl" target="_blank">
+          <a [href]="environment.whatsappUrl" target="_blank" aria-label="Whatsapp">
             <fa-icon [icon]="icons.whatsapp" size="2x" />
           </a>
-          <a [href]="environment.instagramUrl" target="_blank">
+          <a [href]="environment.instagramUrl" target="_blank" aria-label="Instagram">
             <fa-icon [icon]="icons.instagram" size="2x" />
           </a>
         </div>
@@ -24,10 +24,9 @@
       </div>
 
       <div class="col-12">
-        <a [href]="environment.googleMapsUrl" target="_blank" class="mapa">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.1716080771344!2d-53.749701923879456!3d-24.72098810521826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f395e8ab7af2ff%3A0xb405efcb3f82a212!2sPsic%C3%B3loga%20Manoella%20Larissa%20dos%20Santos!5e0!3m2!1spt-BR!2sbr!4v1718022736064!5m2!1spt-BR!2sbr"
-            allowfullscreen="0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <a [href]="environment.googleMapsUrl" target="_blank" class="mapa" aria-label="Localização">
+          <iframe title="Localização" allowfullscreen="0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.1716080771344!2d-53.749701923879456!3d-24.72098810521826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f395e8ab7af2ff%3A0xb405efcb3f82a212!2sPsic%C3%B3loga%20Manoella%20Larissa%20dos%20Santos!5e0!3m2!1spt-BR!2sbr!4v1718022736064!5m2!1spt-BR!2sbr"></iframe>
         </a>
       </div>
     </div>
