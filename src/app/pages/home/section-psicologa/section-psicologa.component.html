@@ -1,14 +1,10 @@
-<section class="psicologa">
+<section class="sobre-psicologa position-relative bg-rosa-escuro text-rosa-claro">
   <div class="page-wrapper">
-    <div class="row g-3">
-      <div class="col-12 col-md">
-        <span>
-          Psicóloga Clínica | {{ environment.crp }}
-        </span>
-
-        <h1>
-          Manoella Larissa dos Santos
-        </h1>
+    <div class="row g-3 g-md-5">
+      <div class="col-12 col-md d-flex gap-3 flex-column">
+        <div>
+          <img src="/assets/images/logo-nome.svg" alt="Logo" class="logo">
+        </div>
 
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere dolor consequuntur expedita amet repellendus
@@ -21,11 +17,16 @@
           possimus
         </p>
 
-        <app-agendar-consulta-button />
+        <div class="d-none d-md-block">
+          <app-agendar-consulta-button />
+        </div>
+      </div>
+      <div class="col-12 col-md-auto d-flex justify-content-center">
+        <img data-src="/assets/images/psicologa3.webp" alt="Psicóloga" class="psicologa">
       </div>
 
-      <div class="col-12 col-md-auto">
-        FOTO
+      <div class="col-12 d-flex d-md-none justify-content-center pt-2">
+        <app-agendar-consulta-button />
       </div>
     </div>
   </div>

@@ -1,5 +1,19 @@
 section {
   padding-top: var(--header-height);
-  background-color: var(--rosa-escuro);
   padding-bottom: 70px;
+
+  .logo {
+    width: 80%;
+    height: auto;
+  }
+
+  .psicologa {
+    width: 258px;
+    height: 400px;
+
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+  }
 }

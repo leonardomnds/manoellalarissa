@@ -1,30 +1,26 @@
-<section class="initial position-relative">
+<section class="initial position-relative bg-rosa-escuro text-rosa-claro">
   <div class="page-wrapper">
     <div class="row g-3">
-      <div class="col-12 col-md">
-        <span>
-          Psicóloga Clínica | {{ environment.crp }}
-        </span>
-
-        <h1>
-          Manoella Larissa dos Santos
-        </h1>
+      <div class="col-12 col-md d-flex gap-3 flex-column align-items-center align-items-md-start">
+        <img src="/assets/images/logo.svg" alt="Logo" class="logo">
 
         <span>
-          Meu propósito é
+          Descubra como vencer a insegurança, conquiste uma autoestima inabalável e
           <span class="fw-semibold">
-            Ajudar Você
-          </span>
-          a ter mais qualidade de vida com saúde mental e emocional.
-          <span class="fw-semibold">
-            Cuide de você!
-          </span>
+            supere seus limites
+          </span>.
         </span>
 
-        <app-agendar-consulta-button />
+        <div class="d-none d-md-block">
+          <app-agendar-consulta-button />
+        </div>
       </div>
-      <div class="col-12 col-md-auto">
-        FOTO
+      <div class="col-12 col-md-auto d-flex justify-content-center">
+        <img src="/assets/images/psicologa.webp" alt="Psicóloga" class="psicologa">
+      </div>
+
+      <div class="col-12 d-flex d-md-none justify-content-center pt-2">
+        <app-agendar-consulta-button />
       </div>
     </div>
   </div>
