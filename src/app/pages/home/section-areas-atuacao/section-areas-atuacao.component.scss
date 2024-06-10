@@ -6,9 +6,6 @@ section {
 
     .card {
       position: relative;
-      color: var(--escuro);
-      border: none;
-      background-color: var(--rosa-claro);
       padding-top: calc(var(--circle-size) / 2);
 
       .icon {
