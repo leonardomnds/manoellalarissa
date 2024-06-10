@@ -1,7 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, DestroyRef, ElementRef, ViewChild, ViewChildren, inject } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { filter, interval, map } from 'rxjs';
+import { interval, map } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -19,18 +19,21 @@ export class HeaderComponent {
   constructor() {
     interval(50)
       .pipe(
-        map(() => this.logoWrapper.nativeElement),
+        map(() => ({
+          logoWrapper: this.logoWrapper.nativeElement,
+          imageHeight: this.document.querySelector<HTMLImageElement>('section.initial .logo')?.height ?? 0
+        })),
         takeUntilDestroyed(this.destroyRef)
       )
-      .subscribe((logoWrapper) => {
-        const deveExibir = this.document.documentElement.scrollTop >= 130;
+      .subscribe((data) => {
+        const deveExibir = this.document.documentElement.scrollTop >= data.imageHeight;
 
         if (deveExibir) {
-          logoWrapper.classList.add(LOGO_VISIBLE_CLASS);
+          data.logoWrapper.classList.add(LOGO_VISIBLE_CLASS);
           return;
         }
 
-        logoWrapper.classList.remove(LOGO_VISIBLE_CLASS);
+        data.logoWrapper.classList.remove(LOGO_VISIBLE_CLASS);
       });
   }
 

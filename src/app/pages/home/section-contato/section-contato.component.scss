@@ -1,0 +1,22 @@
+section {
+  .redes {
+    a {
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .mapa {
+    iframe {
+      border: 0;
+      outline: none;
+      border-radius: 8px;
+
+      width: 100%;
+      height: 250px;
+    }
+  }
+}

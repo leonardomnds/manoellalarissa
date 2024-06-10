@@ -62,6 +62,8 @@ $list-group-bg:                     #fff; /* <- Bug versão 5.2 */
 :root {
   --header-height: 80px;
 
+  --escuro: #{$body-color};
+
   --rosa: #{$rosa};
   --rosa-claro: #{$rosa-claro};
   --rosa-escuro: #{$rosa-escuro};

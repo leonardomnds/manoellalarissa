@@ -13,6 +13,7 @@ import { SectionPsicologaComponent } from './section-psicologa/section-psicologa
 import { AgendarConsultaButtonModule } from '@components/agendar-consulta-button/agendar-consulta-button.module';
 import { SeparatorShapeModule } from '@components/separator-shape/separator-shape.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SectionContatoComponent } from './section-contato/section-contato.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     SectionAreasAtuacaoComponent,
     SectionComoFuncionaComponent,
     SectionBeneficiosComponent,
-    SectionPsicologaComponent
+    SectionPsicologaComponent,
+    SectionContatoComponent
   ],
   imports: [
     CommonModule,
