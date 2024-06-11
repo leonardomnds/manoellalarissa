@@ -2,22 +2,34 @@
   <div class="page-wrapper">
     <div class="row g-3">
       <div class="col-12 col-md d-flex gap-3 flex-column align-items-center align-items-md-start">
-        <img src="assets/images/logo.svg" alt="Logo" class="logo">
+        <img isVisible from="Left" src="assets/images/logo.svg" alt="Logo" class="logo">
 
-        <span>
+        <p>
           Descubra como vencer a insegurança, conquiste uma autoestima inabalável e
           <span class="fw-semibold">supere seus limites</span>.
-        </span>
+        </p>
 
-        <div class="d-none d-md-block">
+        <p>
+          Ao longo da vida, nos deparamos com situações que podem abalar nossa autoestima e prejudicar nossa confiança,
+          por isso, é importante dedicar-se um tempo para o autocuidado.
+          Assim, você desenvolverá as técnicas necessárias para enfrentar desafios de maneira assertiva, além de
+          promover relações saudáveis e fortalecer sua autoconfiança.
+        </p>
+
+        <p class="tipo-atendimento">
+          <fa-icon [icon]="commentIcon" size="lg" class="me-2" />
+          Atendimento presencial e on-line para adultos
+        </p>
+
+        <div isVisible [pixels]="40" class="d-none d-md-block">
           <app-agendar-consulta-button />
         </div>
       </div>
       <div class="col-12 col-md-auto d-flex justify-content-center">
-        <img src="assets/images/psicologa.webp" alt="Psicóloga" class="psicologa">
+        <img isVisible from="Right" src="assets/images/psicologa.webp" alt="Psicóloga" class="psicologa">
       </div>
 
-      <div class="col-12 d-flex d-md-none justify-content-center pt-2">
+      <div isVisible [pixels]="40" class="col-12 d-flex d-md-none justify-content-center pt-2">
         <app-agendar-consulta-button />
       </div>
     </div>

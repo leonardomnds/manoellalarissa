@@ -1,95 +1,11 @@
 @import '/src/assets/scss/bootstrap-utils.scss';
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400&display=swap');
 
 section {
   padding-bottom: 70px;
 
-  .image-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-
-    img {
-      height: 300px;
-      width: auto;
-    }
-
-    .items {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      font-weight: 500;
-      color: var(--rosa-claro);
-    }
-
-    @include media-breakpoint-up(lg) {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      height: 100%;
-      position: relative;
-
-      img {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        height: 350px;
-        transform: translate(-50%, -50%);
-      }
-
-      .item {
-        position: absolute;
-        padding: 8px 16px;
-        text-wrap: nowrap;
-        border-radius: 6px;
-        color: var(--escuro);
-        background-color: var(--rosa);
-
-        left: 50%;
-
-        &.item1,
-        &.item2 {
-          top: 70px;
-        }
-
-        &.item3,
-        &.item4 {
-          top: calc(50% - 16px);
-        }
-
-        &.item5,
-        &.item6 {
-          bottom: 70px;
-        }
-
-        &.item1 {
-          transform: translateX(calc(-50% - 160px));
-        }
-
-        &.item2,
-        &.item4 {
-          right: 0;
-          left: unset !important;
-          transform: none !important;
-        }
-
-        &.item3 {
-          transform: translateX(calc(-50% - 188px));
-        }
-
-        &.item4 {
-          transform: translateX(calc(50% + 50px));
-        }
-
-        &.item5 {
-          transform: translateX(calc(-50% - 135px));
-        }
-
-        &.item6 {
-          transform: translateX(calc(50% + 50px));
-        }
-      }
-    }
+  h1 {
+    font-size: calc(2rem + 1.5vw);
+    font-family: "Dancing Script", "Roboto", sans-serif;
   }
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { environment } from '@env';
+import { faComments } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-section-initial',
@@ -8,6 +9,7 @@ import { environment } from '@env';
 })
 export class SectionInitialComponent {
 
+  commentIcon = faComments;
   environment = environment;
 
 }

@@ -6,7 +6,7 @@
 
     <div class="row g-4">
       <div class="col-md-6">
-        <div class="card">
+        <div isVisible from="Left" class="card">
           <div class="card-body">
             <span>
               <fa-icon [icon]="icons.check" />
@@ -37,7 +37,7 @@
       </div>
 
       <div class="col-md-6">
-        <div class="card">
+        <div isVisible from="Right" class="card">
           <div class="card-body">
             <span>
               <fa-icon [icon]="icons.check" />
@@ -64,7 +64,7 @@
       </div>
     </div>
 
-    <div class="center mt-4">
+    <div isVisible [pixels]="40" class="center mt-4">
       <app-agendar-consulta-button [isEscuro]="true" />
     </div>
   </div>

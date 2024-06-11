@@ -9,7 +9,7 @@
       <div class="row g-3 my-3">
         <ng-container *ngFor="let areaAtuacao of areasAtuacao">
           <div class="col-md-4">
-            <div class="card h-100">
+            <div isVisible [from]="areaAtuacao.from" class="card h-100">
               <div class="icon">
                 <fa-icon [icon]="brainIcon" size="3x" />
               </div>
@@ -26,7 +26,7 @@
         </ng-container>
       </div>
 
-      <div class="center">
+      <div isVisible from="Bottom" [pixels]="40" class="center">
         <app-agendar-consulta-button [isEscuro]="true" />
       </div>
     </div>

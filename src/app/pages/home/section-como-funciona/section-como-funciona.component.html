@@ -1,11 +1,11 @@
 <section class="como-funciona position-relative bg-rosa-escuro text-rosa-claro">
   <div class="page-wrapper">
     <div class="row g-3">
-      <div class="col-lg-6">
-        <h5 class="text-uppercase">
+      <div class="col-lg-8">
+        <h5 isVisible from="Right" [pixels]="30" class="text-uppercase">
           Como funciona
         </h5>
-        <h1>
+        <h1 isVisible from="Left" [pixels]="40">
           Abordagem Psicanalítica
         </h1>
         <p>
@@ -25,20 +25,11 @@
         </p>
       </div>
 
-      <div class="col-lg-6">
-        <div class="image-wrapper">
-          <img data-src="assets/images/cabeca.png" alt="Cabeça">
-          <div class="items">
-            <ng-container *ngFor="let item of cabecaItems; let index = index;">
-              <div class="item item{{index + 1}}">
-                {{ item }}
-              </div>
-            </ng-container>
-          </div>
-        </div>
+      <div class="col-lg-4 center">
+        <img isVisible from="Right" data-src="assets/images/conversa.webp" alt="Conversa">
       </div>
 
-      <div class="col center pt-3">
+      <div isVisible [pixels]="40" class="col center pt-3">
         <app-agendar-consulta-button />
       </div>
     </div>

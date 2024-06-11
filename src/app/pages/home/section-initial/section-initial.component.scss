@@ -13,4 +13,12 @@ section {
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
   }
+
+  p {
+    margin: 0;
+
+    &.tipo-atendimento {
+      font-weight: 500;
+    }
+  }
 }

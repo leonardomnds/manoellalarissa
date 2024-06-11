@@ -1,31 +1,47 @@
 <section class="sobre-psicologa position-relative bg-rosa-escuro text-rosa-claro">
   <div class="page-wrapper">
     <div class="row g-3 g-md-5">
-      <div class="col-12 col-md d-flex gap-3 flex-column">
-        <div>
-          <img src="assets/images/logo-nome.svg" alt="Logo" class="logo">
+      <div class="col-12 col-md-8 d-flex gap-3 flex-column">
+        <div class="mb-3">
+          <img isVisible from="Left" src="assets/images/logo-nome.svg" alt="Logo" class="logo">
         </div>
 
         <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere dolor consequuntur expedita amet repellendus
-          odio iure voluptatibus omnis odit vitae totam itaque, magnam repellat rerum ipsum eveniet ullam distinctio
-          possimus
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere dolor consequuntur expedita amet repellendus
-          odio iure voluptatibus omnis odit vitae totam itaque, magnam repellat rerum ipsum eveniet ullam distinctio
-          possimus
+          Olá, muito prazer!
         </p>
 
-        <div class="d-none d-md-block">
+        <p>
+          Meu nome é Manoella, sou formada pela Pontifícia Universidade Católica do Paraná campus Toledo (PUCPR), com
+          enfoque na Psicanálise. Minha formação é baseada nos três pilares essenciais, sendo Análise Pessoal,
+          Supervisão Clínica e Estudo Teórico.
+        </p>
+
+        <p>
+          Gosto de compreender o comportamento humano, apesar de estar no início da minha jornada clínica. Durante minha
+          formação como psicóloga, adquiri conhecimentos e experiência prática através de estágios supervisionados e
+          estudos.
+        </p>
+
+        <p>
+          Dessa forma, durante as nossas sessões, você encontrará um ambiente acolhedor e seguro, o qual, poderá se
+          expressar livremente, e compartilhar suas experiências e reflexões.
+        </p>
+
+        <p>
+          Vamos juntos, explorar seus pensamentos e sentimentos, estou aqui para te ouvir e apoiar nessa nova trajetória
+          de autoconhecimento e bem-estar.
+          Para encontrarmos, assim, novos caminhos para lidar com suas questões emocionais.
+        </p>
+
+        <div isVisible [pixels]="40" class="d-none d-md-block mt-3">
           <app-agendar-consulta-button />
         </div>
       </div>
-      <div class="col-12 col-md-auto d-flex justify-content-center">
-        <img data-src="assets/images/psicologa2.webp" alt="Psicóloga" class="psicologa">
+      <div class="col-12 col-md-4 center">
+        <img isVisible from="Right" data-src="assets/images/psicologa2.webp" alt="Psicóloga" class="psicologa">
       </div>
 
-      <div class="col-12 d-flex d-md-none justify-content-center pt-2">
+      <div isVisible [pixels]="40" class="col-12 d-flex d-md-none justify-content-center pt-2">
         <app-agendar-consulta-button />
       </div>
     </div>
