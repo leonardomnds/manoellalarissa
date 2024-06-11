@@ -14,7 +14,7 @@
     "prerender": "ng run manoellalarissa:prerender",
     "update:sitemap": "node sitemap.js",
     "deploy:ghpages": "angular-cli-ghpages --dir=dist/browser --branch=gh-pages --cname=manoellalarissa.com.br",
-    "deploy": "npm run prerender && npm run update:sitemap & npm run deploy:ghpages"
+    "deploy": "npm run prerender && npm run update:sitemap && npm run deploy:ghpages"
   },
   "private": true,
   "dependencies": {
