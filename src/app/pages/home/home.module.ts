@@ -14,6 +14,7 @@ import { AgendarConsultaButtonModule } from '@components/agendar-consulta-button
 import { SeparatorShapeModule } from '@components/separator-shape/separator-shape.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SectionContatoComponent } from './section-contato/section-contato.component';
+import { SectionAlertaSuicidioComponent } from './section-alerta-suicidio/section-alerta-suicidio.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SectionContatoComponent } from './section-contato/section-contato.compo
     SectionComoFuncionaComponent,
     SectionBeneficiosComponent,
     SectionPsicologaComponent,
-    SectionContatoComponent
+    SectionContatoComponent,
+    SectionAlertaSuicidioComponent
   ],
   imports: [
     CommonModule,

@@ -7,6 +7,14 @@ section {
     height: auto;
   }
 
+  .image-wrapper {
+    overflow: hidden;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+  }
+
   .psicologa {
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;

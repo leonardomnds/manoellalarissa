@@ -1,14 +1,15 @@
-<section class="contato position-relative bg-rosa text-escuro pb-3">
+<section class="contato position-relative bg-rosa text-escuro">
   <div class="page-wrapper">
     <div class="row g-4">
       <div class="col-md-6 redes">
         <h3 class="m-0 mb-2">Fale comigo</h3>
 
         <div class="d-flex align-items-center gap-3">
-          <a [href]="environment.whatsappUrl" target="_blank" aria-label="Whatsapp">
+          <a [href]="environment.whatsappUrl" target="_blank" isVisible from="Left" [pixels]="30" aria-label="Whatsapp">
             <fa-icon [icon]="icons.whatsapp" size="2x" />
           </a>
-          <a [href]="environment.instagramUrl" target="_blank" aria-label="Instagram">
+          <a [href]="environment.instagramUrl" target="_blank" isVisible from="Right" [pixels]="30"
+            aria-label="Instagram">
             <fa-icon [icon]="icons.instagram" size="2x" />
           </a>
         </div>
@@ -16,10 +17,11 @@
       </div>
       <div class="col-md-6 d-flex flex-column align-items-md-end">
         <h3 class="m-0 mb-2">Te espero aqui</h3>
-        <a [href]="environment.googleMapsUrl" target="_blank" class="hover-underline text-md-end">
-          Rua Pedro dos Santos Ramos, 702 - Sala 02B
+        <a [href]="environment.googleMapsUrl" target="_blank" isVisible [pixels]="40"
+          class="hover-underline text-md-end">
+          Rua Pedro dos Santos Ramos, 702 &#8209; Sala 02B
           <br>
-          Edifício Serena - Jardim La Salle, Toledo - Paraná
+          Edifício Serena &#8209; Jardim La Salle, Toledo &#8209; Paraná
         </a>
       </div>
 

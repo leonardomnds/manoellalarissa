@@ -1,67 +1,18 @@
 <section class="beneficios position-relative bg-rosa text-escuro">
   <div class="page-wrapper">
-    <div class="center flex-column mb-3">
+    <div class="center flex-column">
       <h1>Benefícios da Psicoterapia</h1>
     </div>
 
-    <div class="row g-4">
-      <div class="col-md-6">
-        <div isVisible from="Left" class="card">
-          <div class="card-body">
-            <span>
-              <fa-icon [icon]="icons.check" />
-              Ter maior compreensão de si e da sua personalidade
-            </span>
-            <span>
-              <fa-icon [icon]="icons.check" />
-              Ajuda a identificar os fatores que desencadeiam a ansiedade depressão
-            </span>
-            <span>
-              <fa-icon [icon]="icons.check" />
-              Ajuda a construir um propósito de vida, e a lidar com questões existenciais
-            </span>
-            <span>
-              <fa-icon [icon]="icons.check" />
-              Auxilia no reconhecimento de pensamentos intrusivos e crenças limitantes
-            </span>
-            <span>
-              <fa-icon [icon]="icons.check" />
-              Permite acessar e trabalhar com conteúdo do inconsciente
-            </span>
-            <span>
-              <fa-icon [icon]="icons.check" />
-              Acessar e processar as emoções reprimidas
-            </span>
+    <div class="row g-3 my-3 w-100">
+      <ng-container *ngFor="let beneficio of beneficios">
+        <div class="col-6 col-md-3">
+          <div isVisible [from]="beneficio.from" [pixels]="40" class="center flex-column gap-2">
+            <img data-src="assets/images/{{ beneficio.imagem }}" [alt]="beneficio.titulo">
+            <span class="item">{{ beneficio.titulo }}</span>
           </div>
         </div>
-      </div>
-
-      <div class="col-md-6">
-        <div isVisible from="Right" class="card">
-          <div class="card-body">
-            <span>
-              <fa-icon [icon]="icons.check" />
-              Ajuda a desenvolver habilidades de autoconhecimento e autoestima
-            </span>
-            <span>
-              <fa-icon [icon]="icons.check" />
-              Favorece autonomia psíquica e a restauração do equilíbrio emocional
-            </span>
-            <span>
-              <fa-icon [icon]="icons.check" />
-              Ajuda a desenvolver habilidades de relacionamento e comunicação
-            </span>
-            <span>
-              <fa-icon [icon]="icons.check" />
-              Ajuda a desenvolver uma relação mais saudável consigo mesmo e com os outros
-            </span>
-            <span>
-              <fa-icon [icon]="icons.check" />
-              Ajuda a encontrar uma maior integração entre os aspectos conscientes e inconscientes da personalidade
-            </span>
-          </div>
-        </div>
-      </div>
+      </ng-container>
     </div>
 
     <div isVisible [pixels]="40" class="center mt-4">
