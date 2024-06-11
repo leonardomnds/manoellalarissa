@@ -14,22 +14,22 @@ export class SectionAreasAtuacaoComponent {
   areasAtuacao: AreaAtuacao[] = [
     {
       titulo: 'Ansiedade',
-      imagem: 'ansiedade.webp',
+      imagem: 'assets/images/ansiedade.webp',
       from: AnimationType.Left
     },
     {
       titulo: 'Baixa autoestima',
-      imagem: 'baixa-autoestima.webp',
+      imagem: 'assets/images/baixa-autoestima.webp',
       from: AnimationType.Bottom
     },
     {
       titulo: 'Estresse',
-      imagem: 'estresse.webp',
+      imagem: 'assets/images/estresse.webp',
       from: AnimationType.Bottom
     },
     {
       titulo: 'Procrastinação',
-      imagem: 'procrastinacao.webp',
+      imagem: 'assets/images/procrastinacao.webp',
       from: AnimationType.Right
     }
   ];

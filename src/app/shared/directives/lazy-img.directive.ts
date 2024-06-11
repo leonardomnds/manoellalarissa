@@ -1,24 +1,21 @@
 
-import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { AfterViewInit, Directive, ElementRef, OnInit, PLATFORM_ID, inject } from '@angular/core';
 
-@Directive({ selector: 'img[data-src]' })
+@Directive({ selector: 'img' })
 export class LazyImgDirective implements OnInit, AfterViewInit {
 
   private platformId = inject(PLATFORM_ID);
   private elementRef: ElementRef<HTMLImageElement> = inject(ElementRef<HTMLImageElement>);
 
   ngOnInit(): void {
-    const imgElement = this.elementRef.nativeElement;
-    const originalSrc = imgElement.getAttribute(DATA_SRC_ATTRIBUTE)!;
-
-    imgElement.classList.remove(LOADED_CLASS);
-    imgElement.setAttribute(DATA_SRC_ATTRIBUTE, originalSrc);
-    imgElement.setAttribute('src', 'assets/images/placeholder.png');
+    this.addPlaceholder();
   }
 
   ngAfterViewInit() {
-    if (isPlatformServer(this.platformId)) { return; }
+    this.addPlaceholder();
+
+    if (!isPlatformBrowser(this.platformId)) { return; }
 
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
@@ -28,7 +25,6 @@ export class LazyImgDirective implements OnInit, AfterViewInit {
 
           if (src) {
             img.setAttribute('src', src);
-            img.classList.add(LOADED_CLASS);
           }
 
           observer.unobserve(img);
@@ -39,7 +35,17 @@ export class LazyImgDirective implements OnInit, AfterViewInit {
     observer.observe(this.elementRef.nativeElement);
   }
 
+  private addPlaceholder(): void {
+    const imgElement = this.elementRef.nativeElement;
+
+    const originalSrc = imgElement.getAttribute(DATA_SRC_ATTRIBUTE)!;
+
+    if (!originalSrc) { return; }
+
+    imgElement.setAttribute(DATA_SRC_ATTRIBUTE, originalSrc);
+    imgElement.setAttribute('src', 'assets/images/placeholder.png');
+  }
+
 }
 
-const LOADED_CLASS = 'loaded';
 const DATA_SRC_ATTRIBUTE = 'data-src';

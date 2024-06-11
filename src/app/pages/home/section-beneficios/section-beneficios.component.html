@@ -8,7 +8,7 @@
       <ng-container *ngFor="let beneficio of beneficios">
         <div class="col-6 col-md-3">
           <div isVisible [from]="beneficio.from" [pixels]="40" class="center flex-column gap-2">
-            <img data-src="assets/images/{{ beneficio.imagem }}" [alt]="beneficio.titulo">
+            <img [attr.data-src]="beneficio.imagem" [alt]="beneficio.titulo">
             <span class="item">{{ beneficio.titulo }}</span>
           </div>
         </div>

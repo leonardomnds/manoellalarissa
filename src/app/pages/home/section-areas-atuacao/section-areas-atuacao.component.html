@@ -10,7 +10,7 @@
         <ng-container *ngFor="let areaAtuacao of areasAtuacao">
           <div class="col-6 col-md-3">
             <div isVisible [from]="areaAtuacao.from" [pixels]="40" class="center flex-column gap-2">
-              <img data-src="assets/images/{{ areaAtuacao.imagem }}" [alt]="areaAtuacao.titulo">
+              <img [attr.data-src]="areaAtuacao.imagem" [alt]="areaAtuacao.titulo">
               <span class="item">{{ areaAtuacao.titulo }}</span>
             </div>
           </div>
