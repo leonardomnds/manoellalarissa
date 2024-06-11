@@ -65,3 +65,9 @@ a,
   color: var(--escuro);
   background-color: var(--rosa-claro);
 }
+
+p {
+  word-break: normal;
+  overflow-wrap: normal;
+  white-space: normal;
+}
