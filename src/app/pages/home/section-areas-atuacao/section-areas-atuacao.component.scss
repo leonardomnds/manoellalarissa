@@ -1,34 +1,13 @@
 section {
   padding-bottom: 70px;
 
-  .row {
-    --circle-size: 80px;
+  img {
+    width: 150px;
+    height: 150px;
+  }
 
-    .card {
-      position: relative;
-      padding-top: calc(var(--circle-size) / 2);
-
-      .icon {
-        position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: var(--circle-size);
-        height: var(--circle-size);
-        border-radius: calc(var(--circle-size) / 2);
-        background-color: var(--rosa-escuro);
-
-        top: calc(calc(var(--circle-size) / 2) * -1);
-        left: 20px;
-
-        .ng-fa-icon {
-          color: var(--rosa);
-        }
-      }
-    }
-
-    & > * {
-      margin-top: calc(var(--circle-size) / 2 + 16px);
-    }
+  .item {
+    font-size: 18px;
+    font-weight: 500;
   }
 }

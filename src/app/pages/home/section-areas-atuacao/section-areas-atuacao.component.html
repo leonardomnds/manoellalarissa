@@ -3,30 +3,21 @@
     <div class="center flex-column">
       <h1>Áreas de Atuação</h1>
       <span>
-        Tratamentos e demandas mais frequentes que atendo
+        Demandas mais frequentes que atendo
       </span>
 
-      <div class="row g-3 my-3">
+      <div class="row g-3 my-3 w-100">
         <ng-container *ngFor="let areaAtuacao of areasAtuacao">
-          <div class="col-md-4">
-            <div isVisible [from]="areaAtuacao.from" class="card h-100">
-              <div class="icon">
-                <fa-icon [icon]="brainIcon" size="3x" />
-              </div>
-
-              <div class="card-body">
-                <h4 class="card-title">
-                  {{ areaAtuacao.titulo }}
-                </h4>
-
-                <span [innerHTML]="areaAtuacao.descricao"></span>
-              </div>
+          <div class="col-6 col-md-3">
+            <div isVisible [from]="areaAtuacao.from" [pixels]="40" class="center flex-column gap-2">
+              <img data-src="assets/images/{{ areaAtuacao.imagem }}" [alt]="areaAtuacao.titulo">
+              <span class="item">{{ areaAtuacao.titulo }}</span>
             </div>
           </div>
         </ng-container>
       </div>
 
-      <div isVisible from="Bottom" [pixels]="40" class="center">
+      <div isVisible from="Bottom" [pixels]="40" class="center mt-3">
         <app-agendar-consulta-button [isEscuro]="true" />
       </div>
     </div>
