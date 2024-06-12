@@ -72,10 +72,12 @@ p {
   white-space: normal;
 }
 
-body [data-clarity-id]:not(.site-separator ) {
-  opacity: 1 !important;
-  transform: none !important;
-  transition: none !important;
+body [data-clarity-id] {
+  &:not(.no-clarity) {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }
 
 .print-area {
