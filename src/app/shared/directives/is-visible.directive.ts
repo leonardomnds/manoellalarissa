@@ -24,6 +24,7 @@ export class IsVisibleDirective implements AfterViewInit {
   @HostListener('window:scroll')
   onWindowScroll() {
     if (!isPlatformBrowser(this.platformId)) { return; }
+    if (this.document.body.classList.contains('no-animation')) { return; }
 
     const rect = this.elementRef.nativeElement.getBoundingClientRect();
     const windowHeight = window.innerHeight;

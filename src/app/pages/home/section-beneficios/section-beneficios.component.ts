@@ -30,7 +30,7 @@ export class SectionBeneficiosComponent {
       from: AnimationType.Right,
     },
     {
-      titulo: 'Mudar de comportamentos',
+      titulo: 'Mudar comportamentos',
       imagem: 'assets/images/05.webp',
       from: AnimationType.Bottom,
     },
@@ -45,7 +45,7 @@ export class SectionBeneficiosComponent {
       from: AnimationType.Right,
     },
     {
-      titulo: 'Controlar os sintoma de ansiedade',
+      titulo: 'Controlar os sintomas de ansiedade',
       imagem: 'assets/images/08.webp',
       from: AnimationType.Bottom,
     },
