@@ -45,6 +45,8 @@ export class LazyImgDirective implements OnInit, AfterViewInit {
     imgElement.setAttribute(DATA_SRC_ATTRIBUTE, originalSrc);
     imgElement.setAttribute('src', 'assets/images/placeholder.png');
 
+    if (!isPlatformBrowser(this.platformId)) { return; }
+
     const imageToPreload = new Image();
     imageToPreload.src = originalSrc;
   }
