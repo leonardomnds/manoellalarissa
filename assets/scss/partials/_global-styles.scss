@@ -71,3 +71,9 @@ p {
   overflow-wrap: normal;
   white-space: normal;
 }
+
+body [data-clarity-id] {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
