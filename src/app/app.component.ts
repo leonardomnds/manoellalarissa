@@ -1,5 +1,8 @@
-import { Component, inject } from '@angular/core';
+import { Location } from '@angular/common';
+import { Component, DestroyRef, OnInit, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgbDropdownConfig, NgbTooltipConfig } from '@ng-bootstrap/ng-bootstrap';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop'
 
 @Component({
   selector: 'app-root',

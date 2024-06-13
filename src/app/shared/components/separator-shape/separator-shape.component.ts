@@ -13,7 +13,7 @@ export class SeparatorShapeComponent {
   @Input()
   public isEscuro!: boolean;
 
-  @HostBinding('class') elementClass = 'site-separator';
+  @HostBinding('class') elementClass = 'site-separator no-clarity';
 
   whatsappIcon = faWhatsapp;
   environment = environment;

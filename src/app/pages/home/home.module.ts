@@ -15,6 +15,7 @@ import { SeparatorShapeModule } from '@components/separator-shape/separator-shap
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SectionContatoComponent } from './section-contato/section-contato.component';
 import { SectionAlertaSuicidioComponent } from './section-alerta-suicidio/section-alerta-suicidio.component';
+import { SectionImpressaoComponent } from './section-impressao/section-impressao.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { SectionAlertaSuicidioComponent } from './section-alerta-suicidio/sectio
     SectionBeneficiosComponent,
     SectionPsicologaComponent,
     SectionContatoComponent,
+    SectionImpressaoComponent,
     SectionAlertaSuicidioComponent
   ],
   imports: [

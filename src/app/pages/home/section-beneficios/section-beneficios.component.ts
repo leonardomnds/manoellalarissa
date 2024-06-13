@@ -30,7 +30,7 @@ export class SectionBeneficiosComponent {
       from: AnimationType.Right,
     },
     {
-      titulo: 'Mudar comportamentos',
+      titulo: 'Mudar os hábitos',
       imagem: 'assets/images/05.webp',
       from: AnimationType.Bottom,
     },

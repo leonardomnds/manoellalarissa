@@ -1,0 +1,44 @@
+@media print {
+  body {
+    &.bg-rosa-escuro {
+      background-color: #FFF !important;
+    }
+
+    main,
+    header {
+      display: none;
+    }
+  }
+
+  @page {
+    margin: 1in;
+  }
+
+  .print-area {
+    width: calc(21cm - 1in);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12pt;
+    gap: 24px;
+
+    .logo,
+    .qrcode {
+      &,
+      path {
+        fill: var(--rosa-escuro);
+      }
+    }
+
+    .logo {
+      width: 80%;
+      height: auto;
+    }
+
+    .qrcode {
+      width: 8cm;
+      height: auto;
+    }
+  }
+}
