@@ -10,10 +10,11 @@ export class AnalyticsService {
   initialize(): void {
     if (!this.deveExecutar) { return; }
     this.initializeClarity();
+    this.initializeGoogleAds();
   }
 
   private initializeClarity(): void {
-    if (!this.isClarityAvailable) { return; }
+    if (!environment.clarityKey) { return; }
 
     const script = document.createElement('script');
     script.innerHTML = `(function(c,l,a,r,i,t,y){
@@ -24,11 +25,23 @@ export class AnalyticsService {
     document.head.appendChild(script);
   }
 
-  private get deveExecutar(): boolean {
-    return isPlatformBrowser(inject(PLATFORM_ID)) && !isDevMode();
+  private initializeGoogleAds(): void {
+    if (!environment.googleAdsKey) { return; }
+
+    const script = document.createElement('script');
+    script.async = true;
+    script.innerHTML = `(function(w,d,k){
+      var t=d.createElement("script");t.async=true;
+      t.src="https://www.googletagmanager.com/gtag/js?id="+k;
+      d.head.appendChild(t);t.onload = function(){
+        w.dataLayer=w.dataLayer||[];function gtag(){w.dataLayer.push(arguments);}
+        gtag('js', new Date());gtag('config', k);
+      };
+    })(window, document, "${environment.googleAdsKey}");`;
+    document.head.appendChild(script);
   }
 
-  private get isClarityAvailable(): boolean {
-    return Boolean(environment.clarityKey);
+  private get deveExecutar(): boolean {
+    return true || isPlatformBrowser(inject(PLATFORM_ID)) && !isDevMode();
   }
 }
