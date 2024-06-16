@@ -42,6 +42,6 @@ export class AnalyticsService {
   }
 
   private get deveExecutar(): boolean {
-    return true || isPlatformBrowser(inject(PLATFORM_ID)) && !isDevMode();
+    return isPlatformBrowser(inject(PLATFORM_ID)) && !isDevMode();
   }
 }
