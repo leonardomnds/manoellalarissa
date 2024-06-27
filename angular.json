@@ -68,14 +68,11 @@
             "production": {
               "buildTarget": "manoellalarissa:build:production"
             },
-            "development": {
-              "buildTarget": "manoellalarissa:build:development"
-            },
             "localhost": {
               "buildTarget": "manoellalarissa:build:localhost"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "localhost"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
@@ -137,16 +134,16 @@
         "serve-ssr": {
           "builder": "@angular-devkit/build-angular:ssr-dev-server",
           "configurations": {
-            "development": {
-              "browserTarget": "manoellalarissa:build:development",
-              "serverTarget": "manoellalarissa:server:development"
+            "localhost": {
+              "browserTarget": "manoellalarissa:build:localhost",
+              "serverTarget": "manoellalarissa:server:localhost"
             },
             "production": {
               "browserTarget": "manoellalarissa:build:production",
               "serverTarget": "manoellalarissa:server:production"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "localhost"
         },
         "prerender": {
           "builder": "@angular-devkit/build-angular:prerender",
@@ -161,9 +158,9 @@
               "serverTarget": "manoellalarissa:server:production",
               "discoverRoutes": true
             },
-            "development": {
-              "browserTarget": "manoellalarissa:build:development",
-              "serverTarget": "manoellalarissa:server:development",
+            "localhost": {
+              "browserTarget": "manoellalarissa:build:localhost",
+              "serverTarget": "manoellalarissa:server:localhost",
               "discoverRoutes": true
             }
           },

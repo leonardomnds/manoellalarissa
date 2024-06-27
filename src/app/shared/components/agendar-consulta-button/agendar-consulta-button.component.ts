@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { environment } from '@env';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { AnalyticsService } from '@shared/services/analytics/analytics.service';
 
 @Component({
   selector: 'app-agendar-consulta-button',
@@ -14,6 +15,12 @@ export class AgendarConsultaButtonComponent {
 
   whatsappIcon = faWhatsapp;
   environment = environment;
+
+  private analyticsService = inject(AnalyticsService);
+
+  trackGoogleAds(): void {
+    this.analyticsService.trackGoogleAdsConversion();
+  }
 
   get variant() {
     return this.isEscuro ? 'btn-rosa-escuro' : 'btn-rosa';

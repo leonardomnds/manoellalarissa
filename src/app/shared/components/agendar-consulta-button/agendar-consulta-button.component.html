@@ -1,4 +1,5 @@
-<a target="_blank" rel="noopener" class="btn btn-lg {{ variant }}" [href]="environment.whatsappUrl">
+<a target="_blank" rel="noopener" class="btn btn-lg {{ variant }}" [href]="environment.whatsappUrl"
+  (click)="trackGoogleAds()">
   <fa-icon [icon]="whatsappIcon" size="lg" class="me-1" />
   Agende sua sessão
 </a>

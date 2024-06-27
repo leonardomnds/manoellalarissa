@@ -16,12 +16,20 @@
           promover relações saudáveis e fortalecer sua autoconfiança.
         </p>
 
-        <p class="tipo-atendimento text-center d-flex align-items-center">
-          <fa-icon [icon]="commentIcon" size="lg" class="me-2" />
-          Atendimento presencial
-          <br class="d-sm-none">
-          e on&#8209;line para adultos
-        </p>
+        <div
+          class="d-flex gap-3 gap-lg-5 flex-column-reverse flex-lg-row align-items-sm-center align-items-md-start align-items-lg-center">
+          <p class="tipo-atendimento text-center d-flex align-items-center">
+            <fa-icon [icon]="icons.tipo" size="lg" class="me-2" />
+            Atendimento presencial
+            <br class="d-sm-none">
+            e on&#8209;line para adultos
+          </p>
+
+          <p class="tipo-atendimento text-center d-flex align-items-center">
+            <fa-icon [icon]="icons.individual" size="lg" class="me-2" />
+            Atendimento individual
+          </p>
+        </div>
 
         <div isVisible [pixels]="40" class="d-none d-md-block">
           <app-agendar-consulta-button />

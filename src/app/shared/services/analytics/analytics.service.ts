@@ -7,14 +7,23 @@ import { environment } from '@env';
 })
 export class AnalyticsService {
 
+  private readonly deveExecutar = isPlatformBrowser(inject(PLATFORM_ID)) && !isDevMode();
+
   initialize(): void {
     if (!this.deveExecutar) { return; }
     this.initializeClarity();
     this.initializeGoogleAds();
   }
 
+  trackGoogleAdsConversion(): void {
+    if (!this.deveExecutar || !environment.googleAdsKey) { return; }
+    if (typeof (window as any).gtag !== 'function') { return; }
+
+    (window as any).gtag('event', 'conversion', {'send_to': `${environment.googleAdsKey}/GniOCK_5wroZEP2w7fA9` });
+  }
+
   private initializeClarity(): void {
-    if (!environment.clarityKey) { return; }
+    if (!this.deveExecutar || !environment.clarityKey) { return; }
 
     const script = document.createElement('script');
     script.innerHTML = `(function(c,l,a,r,i,t,y){
@@ -26,7 +35,7 @@ export class AnalyticsService {
   }
 
   private initializeGoogleAds(): void {
-    if (!environment.googleAdsKey) { return; }
+    if (!this.deveExecutar || !environment.googleAdsKey) { return; }
 
     const script = document.createElement('script');
     script.async = true;
@@ -34,14 +43,11 @@ export class AnalyticsService {
       var t=d.createElement("script");t.async=true;
       t.src="https://www.googletagmanager.com/gtag/js?id="+k;
       d.head.appendChild(t);t.onload = function(){
-        w.dataLayer=w.dataLayer||[];function gtag(){w.dataLayer.push(arguments);}
-        gtag('js', new Date());gtag('config', k);
+        w.dataLayer=w.dataLayer||[];w.gtag = function gtag(){w.dataLayer.push(arguments);}
+        w.gtag('js', new Date());w.gtag('config', k);
       };
     })(window, document, "${environment.googleAdsKey}");`;
     document.head.appendChild(script);
   }
 
-  private get deveExecutar(): boolean {
-    return isPlatformBrowser(inject(PLATFORM_ID)) && !isDevMode();
-  }
 }

@@ -1,9 +1,16 @@
 section {
   padding-bottom: 70px;
 
-  img {
-    width: 150px;
-    height: 150px;
+  .img-wrapper {
+    $size: 150px;
+
+    width: $size;
+    height: $size;
+
+    img {
+      width: $size;
+      height: auto;
+    }
   }
 
   .item {
