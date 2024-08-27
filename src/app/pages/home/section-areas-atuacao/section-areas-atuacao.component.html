@@ -7,14 +7,14 @@
       </span>
 
       <div class="row g-3 my-3 w-100">
-        <ng-container *ngFor="let areaAtuacao of areasAtuacao">
+        @for (areaAtuacao of areasAtuacao; track areaAtuacao.titulo) {
           <div class="col-6 col-md-3">
             <div isVisible [from]="areaAtuacao.from" [pixels]="40" class="center flex-column gap-2">
               <img [src]="areaAtuacao.imagem" [alt]="areaAtuacao.titulo">
               <span class="item">{{ areaAtuacao.titulo }}</span>
             </div>
           </div>
-        </ng-container>
+        }
       </div>
 
       <div isVisible from="Bottom" [pixels]="40" class="center mt-3">

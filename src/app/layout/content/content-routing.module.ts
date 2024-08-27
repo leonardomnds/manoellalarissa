@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { ExtraOptions, RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { ContentComponent } from './content.component';
 
 const routes: Routes = [
@@ -10,6 +10,10 @@ const routes: Routes = [
       {
         path: '',
         loadChildren: () => import('@pages/home/home.module').then((m) => m.HomeModule),
+      },
+      {
+        path: 'form',
+        loadChildren: () => import('@pages/ficha-cadastral/ficha-cadastral.module').then((m) => m.FichaCadastralModule),
       },
       {
         path: '**',

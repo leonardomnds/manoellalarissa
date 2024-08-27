@@ -6,13 +6,15 @@
       </a>
     </div>
 
-    <nav class="menu-desktop">
-      <ng-container *ngTemplateOutlet="menus" />
-    </nav>
+    @if (isLandingPage()) {
+      <nav class="menu-desktop">
+        <ng-container *ngTemplateOutlet="menus" />
+      </nav>
 
-    <button (click)="abrirMenu(sidebar)" class="menu-mobile btn text-rosa-claro" aria-label="Menu">
-      <fa-icon [icon]="menuIcon" size="2x" />
-    </button>
+      <button (click)="abrirMenu(sidebar)" class="menu-mobile btn text-rosa-claro" aria-label="Menu">
+        <fa-icon [icon]="menuIcon" size="2x" />
+      </button>
+    }
   </div>
 </header>
 

@@ -5,7 +5,7 @@
     </div>
 
     <div class="row g-3 my-3 w-100">
-      <ng-container *ngFor="let beneficio of beneficios">
+      @for (beneficio of beneficios; track beneficio.titulo) {
         <div class="col-6 col-md-3">
           <div isVisible [from]="beneficio.from" [pixels]="40" class="center flex-column gap-2">
             <div class="img-wrapper center">
@@ -14,7 +14,7 @@
             <span class="item">{{ beneficio.titulo }}</span>
           </div>
         </div>
-      </ng-container>
+      }
     </div>
 
     <div isVisible [pixels]="40" class="center mt-4">

@@ -1,7 +1,10 @@
 import { DOCUMENT } from '@angular/common';
-import { AfterContentInit, Component, ElementRef, HostListener, TemplateRef, ViewChild, inject } from '@angular/core';
+import { AfterContentInit, Component, DestroyRef, ElementRef, HostListener, TemplateRef, ViewChild, inject, input, signal } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { NavigationEnd, Router } from '@angular/router';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { NgbOffcanvas, NgbOffcanvasRef } from '@ng-bootstrap/ng-bootstrap';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -10,15 +13,35 @@ import { NgbOffcanvas, NgbOffcanvasRef } from '@ng-bootstrap/ng-bootstrap';
 })
 export class HeaderComponent implements AfterContentInit {
 
+  isLandingPage = signal(true);
+
   menuIcon = faBars;
 
   private sidebarRef?: NgbOffcanvasRef;
 
+  private router = inject(Router);
   private document = inject(DOCUMENT);
+  private destroyRef = inject(DestroyRef);
   private sidebarService = inject(NgbOffcanvas);
 
   @ViewChild('logo', { static: true })
   private logoWrapper!: ElementRef<HTMLDivElement>;
+
+  constructor() {
+    this.router.events
+      .pipe(
+        filter((event) => event instanceof NavigationEnd),
+        takeUntilDestroyed(this.destroyRef)
+      ).subscribe((event: NavigationEnd) => {
+        const isHome = event.url === '/' || event.url.startsWith('/#');
+        this.isLandingPage.set(isHome);
+
+        if (!isHome) {
+          const metaRobots = this.document.querySelector('meta[name="robots"]')!;
+          metaRobots.setAttribute('content', 'noindex, nofollow');
+        }
+      });
+  }
 
   ngAfterContentInit(): void {
     this.onWindowScroll();
@@ -39,6 +62,12 @@ export class HeaderComponent implements AfterContentInit {
   @HostListener('window:scroll', [])
   onWindowScroll(): void {
     const logoWrapper = this.logoWrapper.nativeElement;
+
+    if (!this.isLandingPage()) {
+      logoWrapper.classList.add(LOGO_VISIBLE_CLASS);
+      return;
+    }
+
     const imageHeight = this.document.querySelector<HTMLImageElement>('section.initial .logo')?.height ?? 0;
 
     if (!imageHeight) { return; }
