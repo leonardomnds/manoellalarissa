@@ -5,7 +5,7 @@ import { IsVisibleDirective } from './is-visible.directive';
 const DIRECTIVES = [LazyImgDirective, IsVisibleDirective]
 
 @NgModule({
-  declarations: DIRECTIVES,
-  exports: DIRECTIVES
+    imports: DIRECTIVES,
+    exports: DIRECTIVES
 })
 export class DirectivesModule { }

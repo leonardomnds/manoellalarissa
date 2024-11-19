@@ -4,11 +4,11 @@ import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./layout/content/content.module').then(m => m.ContentModule),
+    loadChildren: () => import('@layout/content/content.routes').then((r) => r.contentRoutes),
   },
   {
     path: '**',
-    loadChildren: () => import('./layout/content/content.module').then(m => m.ContentModule),
+    loadChildren: () => import('@layout/content/content.routes').then((r) => r.contentRoutes),
   },
 ];
 
