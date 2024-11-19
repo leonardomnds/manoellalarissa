@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
@@ -30,7 +29,6 @@ import { SectionImpressaoComponent } from './section-impressao/section-impressao
     SectionAlertaSuicidioComponent
   ],
   imports: [
-    CommonModule,
     RouterModule,
     DirectivesModule,
     HomeRoutingModule,

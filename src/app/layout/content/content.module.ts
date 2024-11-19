@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 import { RouterModule } from '@angular/router';
@@ -14,7 +13,6 @@ import { NgbOffcanvasModule } from '@ng-bootstrap/ng-bootstrap';
     HeaderComponent
   ],
   imports: [
-    CommonModule,
     RouterModule,
     ContentRoutingModule,
     FontAwesomeModule,
