@@ -2,7 +2,10 @@
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { AfterViewInit, Directive, ElementRef, HostListener, Input, PLATFORM_ID, inject } from '@angular/core';
 
-@Directive({ selector: '[isVisible]' })
+@Directive({
+  standalone: true,
+  selector: '[isVisible]',
+})
 export class IsVisibleDirective implements AfterViewInit {
 
   @Input()

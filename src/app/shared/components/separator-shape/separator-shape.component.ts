@@ -3,10 +3,11 @@ import { environment } from '@env';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
+  standalone: true,
   selector: 'app-separator-shape',
   templateUrl: './separator-shape.component.html',
   styleUrl: './separator-shape.component.scss',
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class SeparatorShapeComponent {
 

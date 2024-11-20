@@ -2,7 +2,10 @@
 import { isPlatformBrowser } from '@angular/common';
 import { AfterViewInit, Directive, ElementRef, OnInit, PLATFORM_ID, inject } from '@angular/core';
 
-@Directive({ selector: 'img' })
+@Directive({
+  standalone: true,
+  selector: 'img',
+})
 export class LazyImgDirective implements OnInit, AfterViewInit {
 
   private platformId = inject(PLATFORM_ID);
