@@ -13,4 +13,6 @@ import { SeparatorShapeComponent } from '@components/separator-shape/separator-s
 })
 export class SectionComoFuncionaComponent {
 
+  cabecaItems: string[] = ['Escuta Clínica', 'Livre Associação', 'Técnicas Verbais', 'Análise de Sonhos', 'Imaginação Ativa', 'Arquétipos'];
+
 }

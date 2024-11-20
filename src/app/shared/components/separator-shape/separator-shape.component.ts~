@@ -15,7 +15,7 @@ export class SeparatorShapeComponent {
   public isEscuro!: boolean;
 
   @HostBinding('class') elementClass = 'site-separator no-clarity';
-
+  
   environment = environment;
 
   get color() {

@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { AnimationType } from '@shared/directives/is-visible.directive';
-import { IsVisibleDirective } from '../../../shared/directives/is-visible.directive';
-import { LazyImgDirective } from '../../../shared/directives/lazy-img.directive';
-import { AgendarConsultaButtonComponent } from '../../../shared/components/agendar-consulta-button/agendar-consulta-button.component';
-import { SeparatorShapeComponent } from '../../../shared/components/separator-shape/separator-shape.component';
+import { IsVisibleDirective } from '@shared/directives/is-visible.directive';
+import { LazyImgDirective } from '@shared/directives/lazy-img.directive';
+import { AgendarConsultaButtonComponent } from '@components/agendar-consulta-button/agendar-consulta-button.component';
+import { SeparatorShapeComponent } from '@components/separator-shape/separator-shape.component';
 
 @Component({
   standalone: true,

@@ -90,29 +90,6 @@
           "options": {
             "buildTarget": "manoellalarissa:build"
           }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/test.ts",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing",
-              "@angular/localize/init"
-            ],
-            "tsConfig": "tsconfig.spec.json",
-            "karmaConfig": "karma.conf.js",
-            "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/assets",
-              "src/robots.txt"
-            ],
-            "styles": [
-              "src/assets/scss/theme.scss",
-              "node_modules/@fortawesome/fontawesome-svg-core/styles.css"
-            ],
-            "scripts": []
-          }
         }
       }
     }

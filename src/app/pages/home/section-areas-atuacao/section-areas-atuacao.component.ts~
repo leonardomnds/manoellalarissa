@@ -15,6 +15,8 @@ import { SeparatorShapeComponent } from '@components/separator-shape/separator-s
 })
 export class SectionAreasAtuacaoComponent {
 
+  brainIcon = faBrain;
+
   areasAtuacao: AreaAtuacao[] = [
     {
       titulo: 'Ansiedade',

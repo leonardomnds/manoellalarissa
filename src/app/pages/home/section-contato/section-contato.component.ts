@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { environment } from '@env';
 import { faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
-import { IsVisibleDirective } from '../../../shared/directives/is-visible.directive';
+import { IsVisibleDirective } from '@shared/directives/is-visible.directive';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
 
 @Component({

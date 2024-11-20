@@ -1,5 +1,5 @@
 import { DOCUMENT, NgTemplateOutlet } from '@angular/common';
-import { AfterContentInit, Component, DestroyRef, ElementRef, HostListener, TemplateRef, ViewChild, inject, input, signal } from '@angular/core';
+import { AfterContentInit, Component, DestroyRef, ElementRef, HostListener, TemplateRef, ViewChild, inject, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
