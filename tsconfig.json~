@@ -11,6 +11,7 @@
       "@pages/*": ["app/pages/*"],
       "@components/*": ["app/shared/components/*"],
       "@shared/*": ["app/shared/*"],
+      "@libs/*": ["../node_modules/*"]
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,

@@ -1,15 +1,22 @@
-import { DOCUMENT } from '@angular/common';
+import { DOCUMENT, NgTemplateOutlet } from '@angular/common';
 import { AfterContentInit, Component, DestroyRef, ElementRef, HostListener, TemplateRef, ViewChild, inject, input, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { NavigationEnd, Router } from '@angular/router';
+import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { NgbOffcanvas, NgbOffcanvasRef } from '@ng-bootstrap/ng-bootstrap';
 import { filter } from 'rxjs';
+import { FaIconComponent } from '@fortawesome/angular-fontawesome';
 
 @Component({
+  standalone: true,
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
+  imports: [
+    RouterLink,
+    FaIconComponent,
+    NgTemplateOutlet
+  ],
 })
 export class HeaderComponent implements AfterContentInit {
 

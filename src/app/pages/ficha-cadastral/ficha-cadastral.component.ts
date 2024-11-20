@@ -1,6 +1,7 @@
-import { AfterContentInit, Component, ElementRef, inject, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
+  standalone: true,
   selector: 'app-ficha-cadastral',
   template: `
     <iframe src="https://forms.gle/cpCZE5B9Df5aEWcG7"></iframe>
