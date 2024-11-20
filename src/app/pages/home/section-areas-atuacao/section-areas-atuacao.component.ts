@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { faBrain } from '@fortawesome/free-solid-svg-icons';
 import { AnimationType } from '@shared/directives/is-visible.directive';
-import { IsVisibleDirective } from '../../../shared/directives/is-visible.directive';
-import { LazyImgDirective } from '../../../shared/directives/lazy-img.directive';
-import { AgendarConsultaButtonComponent } from '../../../shared/components/agendar-consulta-button/agendar-consulta-button.component';
-import { SeparatorShapeComponent } from '../../../shared/components/separator-shape/separator-shape.component';
+import { IsVisibleDirective } from '@shared/directives/is-visible.directive';
+import { LazyImgDirective } from '@shared/directives/lazy-img.directive';
+import { AgendarConsultaButtonComponent } from '@components/agendar-consulta-button/agendar-consulta-button.component';
+import { SeparatorShapeComponent } from '@components/separator-shape/separator-shape.component';
 
 @Component({
   standalone: true,
@@ -14,8 +14,6 @@ import { SeparatorShapeComponent } from '../../../shared/components/separator-sh
   imports: [IsVisibleDirective, LazyImgDirective, AgendarConsultaButtonComponent, SeparatorShapeComponent]
 })
 export class SectionAreasAtuacaoComponent {
-
-  brainIcon = faBrain;
 
   areasAtuacao: AreaAtuacao[] = [
     {

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { faHand, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
-import { IsVisibleDirective } from '../../../shared/directives/is-visible.directive';
+import { IsVisibleDirective } from '@shared/directives/is-visible.directive';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
 
 @Component({
