@@ -16,6 +16,11 @@ import { provideAnimationsAsync } from "@angular/platform-browser/animations/asy
 import { SiteURL } from "@shared/injection-tokens";
 import { isPlatformServer } from "@angular/common";
 
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
+
+registerLocaleData(localePt);
+
 export const appConfig: ApplicationConfig = {
   providers: [
     provideClientHydration(),

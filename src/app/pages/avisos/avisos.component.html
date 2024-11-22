@@ -13,13 +13,13 @@
     <div class="card-body d-flex flex-column gap-2">
       <h5 class="card-title">Sigilo</h5>
       <span>
-      Todo conteúdo abordado em sessão será mantido em sigilo, conforme o Artigo 9 do Código de Ética Profissional
-      do Psicólogo.
-    </span>
+        Todo conteúdo abordado em sessão será mantido em sigilo, conforme o Artigo 9 do Código de Ética Profissional
+        do Psicólogo.
+      </span>
 
       <span>
-      Exceções ao sigilo ocorrerão apenas em situações previstas por lei, como risco à vida.
-    </span>
+        Exceções ao sigilo ocorrerão apenas em situações previstas por lei, como risco à vida.
+      </span>
     </div>
   </div>
 
@@ -28,12 +28,12 @@
       <div class="card-body d-flex flex-column gap-2">
         <h5 class="card-title">Dia e Horário</h5>
         <span>
-        O dia e horário reservados para você são: {{ diaSemana() }} às {{ horarioMarcado() }}.
-      </span>
+          O dia e horário reservados para você são: {{ diaSemana() }} às {{ horarioMarcado() }}.
+        </span>
 
         <span>
-        Esse horário ficará reservado exclusivamente para o seu atendimento.
-      </span>
+          Esse horário ficará reservado exclusivamente para o seu atendimento.
+        </span>
       </div>
     </div>
   }
@@ -44,20 +44,20 @@
 
       @if (valorSessao(); as valor) {
         <span>
-        O valor de cada sessão é {{ valor | currency }}.
-      </span>
+          O valor de cada sessão é {{ valor | currency }}.
+        </span>
       }
 
       @if (frequenciaPagamento(); as frequencia) {
         <span>
-        O pagamento deverá ser realizado {{ frequencia }}.
-      </span>
+          O pagamento deverá ser realizado {{ frequencia }}.
+        </span>
       }
 
       <span>
-      Haverá um reajuste anual de 10% no valor das sessões.
-      Qualquer alteração será previamente discutida e acordada entre nós.
-    </span>
+        Haverá um reajuste anual de 10% no valor das sessões.
+        Qualquer alteração será previamente discutida e acordada entre nós.
+      </span>
     </div>
   </div>
 
@@ -66,20 +66,20 @@
       <h5 class="card-title">Desmarcações e Mudanças de Horário</h5>
 
       <span>
-      Desmarcações devem ser feitas com pelo menos 24 horas de antecedência.
-    </span>
+        Desmarcações devem ser feitas com pelo menos 24 horas de antecedência.
+      </span>
 
       <span>
-      Em casos excepcionais, serão aceitas até 12 horas antes da sessão.
-    </span>
+        Em casos excepcionais, serão aceitas até 12 horas antes da sessão.
+      </span>
 
       <span>
-      Cancelamentos feitos dentro desse prazo não serão cobrados.
-    </span>
+        Cancelamentos feitos dentro desse prazo não serão cobrados.
+      </span>
 
       <span>
-      Mudanças de horário dependerão da disponibilidade de agenda da psicóloga.
-    </span>
+        Mudanças de horário dependerão da disponibilidade de agenda da psicóloga.
+      </span>
     </div>
   </div>
 
@@ -88,24 +88,24 @@
       <h5 class="card-title">Faltas</h5>
 
       <span>
-      Faltas sem aviso prévio ou fora do prazo combinado serão consideradas como sessão realizada e
-      <span class="fw-semibold">cobradas normalmente</span>.
-    </span>
+        Faltas sem aviso prévio ou fora do prazo combinado serão consideradas como sessão realizada e
+        <span class="fw-semibold">cobradas normalmente</span>.
+      </span>
 
       <span>
-      Após duas faltas consecutivas sem aviso, o horário reservado será liberado para outro paciente.
-    </span>
+        Após duas faltas consecutivas sem aviso, o horário reservado será liberado para outro paciente.
+      </span>
     </div>
   </div>
 
-  <div class="card">
+  <div class="card mb-3">
     <div class="card-body d-flex flex-column gap-2">
       <h5 class="card-title">Imprevistos da Psicóloga</h5>
 
       <span>
-      Caso eu precise cancelar uma sessão por motivo de saúde ou força maior,
-      será feita a remarcação sem custos ou a reposição em outro momento combinado.
-    </span>
+        Caso eu precise cancelar uma sessão por motivo de saúde ou força maior,
+        será feita a remarcação sem custos ou a reposição em outro momento combinado.
+      </span>
     </div>
   </div>
 </div>
