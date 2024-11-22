@@ -14,6 +14,7 @@ import { CurrencyPipe } from "@angular/common";
 })
 export class AvisosComponent implements OnInit {
 
+  private router = inject(Router);
   private route = inject(ActivatedRoute);
   private avisoService = inject(AvisoService);
 
@@ -37,6 +38,12 @@ export class AvisosComponent implements OnInit {
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id')!;
     const avisoParams = this.avisoService.getParamsFromAvisoId(id);
+
+    if (!avisoParams) {
+      this.router.navigate(['/'], { replaceUrl: true });
+      return;
+    }
+
     this._avisoParams.set(avisoParams);
   }
 

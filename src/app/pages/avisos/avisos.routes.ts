@@ -3,7 +3,7 @@ import { AvisosComponent } from "@pages/avisos/avisos.component";
 
 export const avisosRoutes: Routes = [
   {
-    path: ':id([0-9]{9})',
+    path: ':id',
     component: AvisosComponent,
   },
   {

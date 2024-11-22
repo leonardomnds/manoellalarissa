@@ -40,13 +40,11 @@ export class HeaderComponent implements AfterContentInit {
         filter((event) => event instanceof NavigationEnd),
         takeUntilDestroyed(this.destroyRef)
       ).subscribe((event: NavigationEnd) => {
-        const isHome = event.url === '/' || event.url.startsWith('/#');
+        const isHome = event.urlAfterRedirects === '/' || event.urlAfterRedirects.startsWith('/#');
         this.isLandingPage.set(isHome);
 
-        if (!isHome) {
-          const metaRobots = this.document.querySelector('meta[name="robots"]')!;
-          metaRobots.setAttribute('content', 'noindex, nofollow');
-        }
+        const metaRobots = this.document.querySelector('meta[name="robots"]')!;
+        metaRobots.setAttribute('content', isHome ? ROBOTS_WITH_INDEX : ROBOTS_WITHOUT_INDEX);
       });
   }
 
@@ -92,3 +90,5 @@ export class HeaderComponent implements AfterContentInit {
 }
 
 const LOGO_VISIBLE_CLASS = 'visible'
+const ROBOTS_WITH_INDEX = 'index, follow, notranslate, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
+const ROBOTS_WITHOUT_INDEX = 'noindex, nofollow';
