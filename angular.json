@@ -29,7 +29,8 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/assets",
-              "src/robots.txt"
+              "src/robots.txt",
+              "src/_headers"
             ],
             "styles": [
               "src/assets/scss/theme.scss",
