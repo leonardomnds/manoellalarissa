@@ -21,7 +21,7 @@ import { FaIconComponent } from '@fortawesome/angular-fontawesome';
 })
 export class HeaderComponent implements AfterContentInit {
 
-  isLandingPage = signal(true);
+  isLandingPage = signal(false);
 
   menuIcon = faBars;
 

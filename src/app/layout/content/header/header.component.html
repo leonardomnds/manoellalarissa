@@ -29,7 +29,7 @@
 
 <ng-template #sidebar>
   <div class="offcanvas-header bg-rosa-escuro">
-    <img src="assets/images/logo.svg" alt="Logo">
+    <img ngSrc="assets/images/logo.svg" alt="Logo" [width]="232" [height]="50" priority>
   </div>
   <div class="offcanvas-body bg-rosa-escuro">
     <ng-container *ngTemplateOutlet="menus" />
