@@ -3,16 +3,22 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { AvisoService } from "@shared/services/aviso/aviso.service";
 import { AvisoParams } from "@shared/services/aviso/dto";
 import { CurrencyPipe } from "@angular/common";
+import { environment } from "@env";
+import { FaIconComponent } from "@fortawesome/angular-fontawesome";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   standalone: true,
   selector: 'app-avisos',
   templateUrl: './avisos.component.html',
   imports: [
-    CurrencyPipe
+    CurrencyPipe,
+    FaIconComponent
   ]
 })
 export class AvisosComponent implements OnInit {
+
+  icons = ICONS;
 
   private router = inject(Router);
   private route = inject(ActivatedRoute);
@@ -35,6 +41,23 @@ export class AvisosComponent implements OnInit {
       .join(':') + 'h';
   });
 
+  confirmarUrl = computed(() => {
+    const params = this._avisoParams();
+    if (!params) { return; }
+    const url = this.avisoService.getUrl(params);
+    if (!url) { return; }
+
+    const mensagem = [
+      'Declaro que li o conteúdo da URL abaixo:',
+      '%0A',
+      url,
+      '%0A%0A',
+      'Confirmo que estou de acordo com os termos descritos.'
+    ].join('');
+
+    return `${environment.whatsappUrl}?text=${mensagem}`;
+  });
+
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id')!;
     const avisoParams = this.avisoService.getParamsFromAvisoId(id);
@@ -46,5 +69,8 @@ export class AvisosComponent implements OnInit {
 
     this._avisoParams.set(avisoParams);
   }
+}
 
+const ICONS = {
+  confirmar: faCheck,
 }

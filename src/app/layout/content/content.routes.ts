@@ -11,7 +11,7 @@ export const contentRoutes: Routes = [
         loadChildren: () => import('@pages/home/home.routes').then((r) => r.homeRoutes),
       },
       {
-        path: 'avisos',
+        path: 'termos',
         loadChildren: () => import('@pages/avisos/avisos.routes').then((r) => r.avisosRoutes),
       },
       {

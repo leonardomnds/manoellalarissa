@@ -1,13 +1,5 @@
 <div class="page-wrapper d-flex flex-column gap-3">
-  <h3 class="text-rosa-claro">Avisos e Combinados</h3>
-
-  <div class="card">
-    <div class="card-body d-flex flex-column gap-2">
-      <h5 class="card-title">Atendimento</h5>
-      <span>As sessões têm duração média de 45 a 50 minutos.</span>
-      <span>Em caso de atrasos, o tempo da sessão será reduzido proporcionalmente, para evitar impactos nos atendimentos seguintes.</span>
-    </div>
-  </div>
+  <h3 class="text-rosa-claro">Termos de Consentimento</h3>
 
   <div class="card">
     <div class="card-body d-flex flex-column gap-2">
@@ -18,8 +10,18 @@
       </span>
 
       <span>
-        Exceções ao sigilo ocorrerão apenas em situações previstas por lei, como risco à vida.
+        O sigilo será quebrado
+        <span class="fw-semibold">somente</span>
+        em situações previstas por lei, como em casos de risco à vida.
       </span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body d-flex flex-column gap-2">
+      <h5 class="card-title">Atendimento</h5>
+      <span>As sessões têm duração média de 50 minutos.</span>
+      <span>Em caso de atrasos, o tempo da sessão será reduzido proporcionalmente, para evitar impactos nos atendimentos seguintes.</span>
     </div>
   </div>
 
@@ -44,18 +46,22 @@
 
       @if (valorSessao(); as valor) {
         <span>
-          O valor de cada sessão é {{ valor | currency }}.
+          O valor de cada sessão é
+          <span class="fw-semibold">{{ valor | currency }}</span>.
         </span>
       }
 
       @if (frequenciaPagamento(); as frequencia) {
         <span>
-          O pagamento deverá ser realizado {{ frequencia }}.
+          O pagamento deverá ser realizado
+          <span class="fw-semibold">{{ frequencia }}</span>.
         </span>
       }
 
       <span>
-        Haverá um reajuste anual de 10% no valor das sessões.
+        Haverá um
+        <span class="fw-semibold">reajuste anual</span>
+        de 10% no valor das sessões.
         Qualquer alteração será previamente discutida e acordada entre nós.
       </span>
     </div>
@@ -63,18 +69,21 @@
 
   <div class="card">
     <div class="card-body d-flex flex-column gap-2">
-      <h5 class="card-title">Desmarcações e Mudanças de Horário</h5>
+      <h5 class="card-title">Mudanças de Horário</h5>
 
       <span>
-        Desmarcações devem ser feitas com pelo menos 24 horas de antecedência.
+        Desmarcações devem ser feitas com
+        <span class="fw-semibold">pelo menos</span>
+        24 horas de antecedência.
       </span>
 
       <span>
-        Em casos excepcionais, serão aceitas até 12 horas antes da sessão.
+        Em <span class="fw-semibold">casos excepcionais</span>,
+        o cancelamento será aceito até 12 horas antes da sessão.
       </span>
 
       <span>
-        Cancelamentos feitos dentro desse prazo não serão cobrados.
+        Cancelamentos feitos dentro desses prazos não gerarão cobranças.
       </span>
 
       <span>
@@ -93,19 +102,34 @@
       </span>
 
       <span>
-        Após duas faltas consecutivas sem aviso, o horário reservado será liberado para outro paciente.
+        Após três faltas consecutivas sem aviso, o horário reservado será liberado para outro paciente.
       </span>
     </div>
   </div>
 
-  <div class="card mb-3">
+  <div class="card">
     <div class="card-body d-flex flex-column gap-2">
       <h5 class="card-title">Imprevistos da Psicóloga</h5>
 
       <span>
         Caso eu precise cancelar uma sessão por motivo de saúde ou força maior,
-        será feita a remarcação sem custos ou a reposição em outro momento combinado.
+        a sessão será remarcada sem custos ou reagendada para outro momento.
       </span>
     </div>
+  </div>
+
+  <div class="text-rosa-claro d-flex flex-column align-items-center justify-content-center gap-2">
+    <span class="text-center">
+      Esses acordos ajudam a manter um vínculo claro e respeitoso, favorecendo o bom andamento do processo.
+    </span>
+
+    <span class="fw-semibold">Você concorda?</span>
+
+    @if (confirmarUrl(); as url) {
+      <a target="_blank" rel="noopener" class="btn btn-rosa d-inline-flex gap-1 align-items-center my-2" [href]="confirmarUrl()">
+        <fa-icon [icon]="icons.confirmar" size="lg" class="me-1" />
+        Concordo com os termos
+      </a>
+    }
   </div>
 </div>

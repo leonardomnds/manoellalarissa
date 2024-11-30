@@ -18,7 +18,7 @@ export class AvisoService {
       this.padLeft(params.horarioMarcado.minuto, 2),
     ].join('');
 
-    return `${this._siteUrl}/avisos/${avisoId}`;
+    return `${this._siteUrl}/termos/${avisoId}`;
   }
 
   getParamsFromAvisoId(avisoId: string | null): AvisoParams | null {
