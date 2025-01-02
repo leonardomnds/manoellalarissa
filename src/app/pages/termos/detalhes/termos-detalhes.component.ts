@@ -1,22 +1,22 @@
 import { Component, computed, inject, OnInit, signal } from '@angular/core';
+import { CurrencyPipe } from "@angular/common";
+import { FaIconComponent } from "@fortawesome/angular-fontawesome";
 import { ActivatedRoute, Router } from "@angular/router";
 import { AvisoService } from "@shared/services/aviso/aviso.service";
 import { AvisoParams } from "@shared/services/aviso/dto";
-import { CurrencyPipe } from "@angular/common";
 import { environment } from "@env";
-import { FaIconComponent } from "@fortawesome/angular-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   standalone: true,
-  selector: 'app-avisos',
-  templateUrl: './avisos.component.html',
+  selector: 'app-termos-detalhes',
+  templateUrl: './termos-detalhes.component.html',
   imports: [
     CurrencyPipe,
     FaIconComponent
   ]
 })
-export class AvisosComponent implements OnInit {
+export class TermosDetalhesComponent implements OnInit {
 
   icons = ICONS;
 
