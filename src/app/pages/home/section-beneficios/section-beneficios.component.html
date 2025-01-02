@@ -9,7 +9,7 @@
         <div class="col-6 col-md-3">
           <div isVisible [from]="beneficio.from" [pixels]="40" class="center flex-column gap-2">
             <div class="img-wrapper center">
-              <img [attr.data-src]="beneficio.imagem" [alt]="beneficio.titulo">
+              <img [ngSrc]="beneficio.imagem" [alt]="beneficio.titulo" [width]="150" [height]="150">
             </div>
             <span class="item">{{ beneficio.titulo }}</span>
           </div>

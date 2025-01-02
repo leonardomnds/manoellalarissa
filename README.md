@@ -45,7 +45,7 @@ Este projeto é um site desenvolvido para a psicóloga Manoella Larissa, utiliza
 ## Como Gerar o Site Estático
 
 ```sh
-  npm run prerender
+  npm run build
 ```
 
 ## Publicação no GitHub Pages

@@ -25,6 +25,9 @@ export class AnalyticsService {
   private initializeClarity(): void {
     if (!this.deveExecutar || !environment.clarityKey) { return; }
 
+    this.addPreconnectLink('https://c.clarity.ms');
+    this.addPreconnectLink('https://www.clarity.ms');
+
     const script = document.createElement('script');
     script.innerHTML = `(function(c,l,a,r,i,t,y){
       c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -48,6 +51,14 @@ export class AnalyticsService {
       };
     })(window, document, "${environment.googleAdsKey}");`;
     document.head.appendChild(script);
+  }
+
+  private addPreconnectLink(href: string): void {
+    const preconnect = document.createElement('link');
+    preconnect.href = href;
+    preconnect.rel = 'preconnect';
+    preconnect.crossOrigin = 'anonymous';
+    document.head.appendChild(preconnect);
   }
 
 }

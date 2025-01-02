@@ -10,7 +10,7 @@
         @for (areaAtuacao of areasAtuacao; track areaAtuacao.titulo) {
           <div class="col-6 col-md-3">
             <div isVisible [from]="areaAtuacao.from" [pixels]="40" class="center flex-column gap-2">
-              <img [src]="areaAtuacao.imagem" [alt]="areaAtuacao.titulo">
+              <img [ngSrc]="areaAtuacao.imagem" [alt]="areaAtuacao.titulo" [width]="150" [height]="150">
               <span class="item">{{ areaAtuacao.titulo }}</span>
             </div>
           </div>
