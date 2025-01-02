@@ -1,17 +1,20 @@
 import { Component } from '@angular/core';
-import { faBrain } from '@fortawesome/free-solid-svg-icons';
-import { AnimationType } from '@shared/directives/is-visible.directive';
-import { IsVisibleDirective } from '@shared/directives/is-visible.directive';
-import { LazyImgDirective } from '@shared/directives/lazy-img.directive';
+import { AnimationType, IsVisibleDirective } from '@shared/directives/is-visible.directive';
 import { AgendarConsultaButtonComponent } from '@components/agendar-consulta-button/agendar-consulta-button.component';
 import { SeparatorShapeComponent } from '@components/separator-shape/separator-shape.component';
+import { NgOptimizedImage } from "@angular/common";
 
 @Component({
   standalone: true,
   selector: 'app-section-areas-atuacao',
   templateUrl: './section-areas-atuacao.component.html',
   styleUrls: ['./section-areas-atuacao.component.scss'],
-  imports: [IsVisibleDirective, LazyImgDirective, AgendarConsultaButtonComponent, SeparatorShapeComponent]
+  imports: [
+    IsVisibleDirective,
+    AgendarConsultaButtonComponent,
+    SeparatorShapeComponent,
+    NgOptimizedImage
+  ]
 })
 export class SectionAreasAtuacaoComponent {
 

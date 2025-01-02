@@ -11,6 +11,10 @@ export const contentRoutes: Routes = [
         loadChildren: () => import('@pages/home/home.routes').then((r) => r.homeRoutes),
       },
       {
+        path: 'termos',
+        loadChildren: () => import('@pages/avisos/avisos.routes').then((r) => r.avisosRoutes),
+      },
+      {
         path: 'form',
         loadChildren: () => import('@pages/ficha-cadastral/ficha-cadastral.routes').then((r) => r.fichaCadastralRoutes),
       },
