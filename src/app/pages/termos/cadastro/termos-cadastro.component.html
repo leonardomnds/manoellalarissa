@@ -1,4 +1,4 @@
-<div class="page-wrapper d-flex flex-column gap-3">
+<form [formGroup]="form" class="page-wrapper d-flex flex-column gap-3">
   <h3 class="text-rosa-claro">Criar Termo de Consentimento</h3>
 
   <div class="card">
@@ -6,8 +6,22 @@
       <h5 class="card-title">Dados Gerais</h5>
 
       <div class="row g-3">
+        <app-select
+          label="Frequência de Pagamento"
+          formControlName="frequenciaPagamento"
+          [options]="frequenciaPagamentoOptions"
+        />
+      </div>
 
+      <div class="d-flex align-items-center gap-2">
+        <button type="button" class="btn btn-rosa-escuro">
+          Copiar Link
+        </button>
+
+        <button type="button" class="btn btn-rosa-escuro">
+          Abrir Link
+        </button>
       </div>
     </div>
   </div>
-</div>
+</form>

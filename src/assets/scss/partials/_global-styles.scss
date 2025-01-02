@@ -1,3 +1,4 @@
+@import 'variables';
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 html, body {
@@ -82,4 +83,31 @@ body [data-clarity-id] {
 
 .print-area {
   display: none;
+}
+
+label.required:after {
+  content: "\00a0*";
+  color: #dd5861;
+}
+
+form.ng-submitted {
+  .form-control.ng-invalid,
+  .input-group:has(.form-control.ng-invalid),
+  .ng-invalid > .form-control,
+  .ng-invalid > .input-group > .form-control,
+  .ng-invalid {
+    @extend .is-invalid;
+  }
+
+  .ng-invalid > .invalid-feedback {
+    display: block;
+  }
+}
+
+input[readonly].form-control {
+  color: $input-disabled-color;
+  background-color: $input-disabled-bg;
+  border-color: $input-disabled-border-color;
+  // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
+  opacity: 1;
 }

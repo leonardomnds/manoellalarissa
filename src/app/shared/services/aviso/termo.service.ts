@@ -1,15 +1,15 @@
 import { inject, Injectable } from '@angular/core';
-import { AvisoParams, DiaSemanaEnum, FrequenciaPagamentoEnum } from "@shared/services/aviso/dto";
+import { TermoParams } from "@shared/services/aviso/dto";
 import { SiteURL } from "@shared/injection-tokens";
 
 @Injectable({
   providedIn: 'root'
 })
-export class AvisoService {
+export class TermoService {
 
   private _siteUrl = inject(SiteURL);
 
-  getUrl(params: AvisoParams): string {
+  getUrl(params: TermoParams): string {
     const avisoId = [
       this.padLeft(params.frequenciaPagamento, 1),
       this.padLeft(params.diaSemana, 1),
@@ -21,7 +21,7 @@ export class AvisoService {
     return `${this._siteUrl}/termos/${avisoId}`;
   }
 
-  getParamsFromAvisoId(avisoId: string | null): AvisoParams | null {
+  getParamsFromTermoId(avisoId: string | null): TermoParams | null {
     const sanitizedId  = `${avisoId || ''}`.replace(/\D/g, '');
 
     if (sanitizedId.length !== 9) return null;
@@ -43,42 +43,6 @@ export class AvisoService {
         },
       };
     } catch {
-      return null;
-    }
-  }
-
-  getDiaSemanaExtenso(diaSemana: DiaSemanaEnum): string | null {
-    switch (diaSemana) {
-    case DiaSemanaEnum.Domingo:
-      return 'Domingo';
-    case DiaSemanaEnum.Segunda:
-      return 'Segunda-feira';
-    case DiaSemanaEnum.Terca:
-      return 'Terça-feira';
-    case DiaSemanaEnum.Quarta:
-      return 'Quarta-feira';
-    case DiaSemanaEnum.Quinta:
-      return 'Quinta-feira';
-    case DiaSemanaEnum.Sexta:
-      return 'Sexta-feira';
-    case DiaSemanaEnum.Sabado:
-      return 'Sábado';
-    default:
-      return null;
-    }
-  }
-
-  getFrequenciaPagamentoExtenso(frequenciaPagamento: FrequenciaPagamentoEnum): string | null {
-    switch (frequenciaPagamento) {
-    case FrequenciaPagamentoEnum.NoDia:
-      return 'no dia da sessão';
-    case FrequenciaPagamentoEnum.Semanal:
-      return 'semanalmente';
-    case FrequenciaPagamentoEnum.Quinzenal:
-      return 'a cada quinze dias';
-    case FrequenciaPagamentoEnum.Mensal:
-      return 'mensalmente';
-    default:
       return null;
     }
   }

@@ -2,8 +2,8 @@ import { Component, computed, inject, OnInit, signal } from '@angular/core';
 import { CurrencyPipe } from "@angular/common";
 import { FaIconComponent } from "@fortawesome/angular-fontawesome";
 import { ActivatedRoute, Router } from "@angular/router";
-import { AvisoService } from "@shared/services/aviso/aviso.service";
-import { AvisoParams } from "@shared/services/aviso/dto";
+import { TermoService } from "@shared/services/aviso/termo.service";
+import { diaSemanaDescricao, frequenciaPagamentoDescricao, TermoParams } from "@shared/services/aviso/dto";
 import { environment } from "@env";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
@@ -22,15 +22,13 @@ export class TermosDetalhesComponent implements OnInit {
 
   private router = inject(Router);
   private route = inject(ActivatedRoute);
-  private avisoService = inject(AvisoService);
+  private termoService = inject(TermoService);
 
-  private _avisoParams = signal<AvisoParams | null>(null);
+  private _avisoParams = signal<TermoParams | null>(null);
 
   valorSessao = computed(() => this._avisoParams()?.valor);
-  diaSemana = computed(() => this.avisoService.getDiaSemanaExtenso(this._avisoParams()?.diaSemana!));
-  frequenciaPagamento = computed(() => (
-    this.avisoService.getFrequenciaPagamentoExtenso(this._avisoParams()?.frequenciaPagamento!)
-  ));
+  diaSemana = computed(() => (diaSemanaDescricao[this._avisoParams()?.diaSemana!] ?? '').toLowerCase());
+  frequenciaPagamento = computed(() => (frequenciaPagamentoDescricao[this._avisoParams()?.frequenciaPagamento!] ?? '').toLowerCase());
   horarioMarcado = computed(() => {
     const horario = this._avisoParams()?.horarioMarcado;
 
@@ -44,7 +42,7 @@ export class TermosDetalhesComponent implements OnInit {
   confirmarUrl = computed(() => {
     const params = this._avisoParams();
     if (!params) { return; }
-    const url = this.avisoService.getUrl(params);
+    const url = this.termoService.getUrl(params);
     if (!url) { return; }
 
     const mensagem = [
@@ -60,7 +58,7 @@ export class TermosDetalhesComponent implements OnInit {
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id')!;
-    const avisoParams = this.avisoService.getParamsFromAvisoId(id);
+    const avisoParams = this.termoService.getParamsFromTermoId(id);
 
     if (!avisoParams) {
       this.router.navigate(['/'], { replaceUrl: true });
