@@ -20,6 +20,10 @@ export class ValidationService {
     };
 
     type ObjectKey = keyof typeof config;
+    console.log({
+      validatorName,
+      validatorValue,
+    })
 
     return config[validatorName as ObjectKey] || 'O valor informado é inválido';
   }

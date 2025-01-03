@@ -90,7 +90,7 @@ label.required:after {
   color: #dd5861;
 }
 
-form.ng-submitted {
+form {
   .form-control.ng-invalid,
   .input-group:has(.form-control.ng-invalid),
   .ng-invalid > .form-control,

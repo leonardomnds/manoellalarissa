@@ -1,0 +1,34 @@
+@if (label()) {
+  <app-label
+    [for]="id()"
+    [label]="label()"
+    [isRequired]="isRequired()"/>
+}
+
+<div class="input-group">
+  <ng-content select="[prepend]"/>
+
+  <input
+    [id]="id()"
+    [name]="id()"
+    [type]="inputType()"
+    [(ngModel)]="value"
+    class="form-control"
+    autocomplete="new-password"
+    [placeholder]="placeholder()"
+    [readonly]="readOnly()"
+    [attr.required]="isRequired() ? true : null"
+    [attr.disabled]="disabled() ? true : null"
+    [attr.minlength]="minLength()"
+    [attr.maxlength]="maxLength()"
+    [inputMask]="mask()"
+    (input)="onInput($event)"
+    (blur)="onBlur()"
+    (keydown.enter)="onEnterPressed.emit()">
+
+  <ng-content select="[append]"/>
+</div>
+
+@if (formControl) {
+  <app-error-message [control]="formControl"/>
+}

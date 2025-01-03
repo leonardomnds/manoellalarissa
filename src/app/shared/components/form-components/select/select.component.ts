@@ -1,5 +1,4 @@
 import { Component, computed, inject, input, OnInit, signal } from '@angular/core';
-import { NgSelectModule } from "@ng-select/ng-select";
 import {
   AbstractControl,
   ControlValueAccessor,
@@ -18,7 +17,6 @@ import { FormControlService } from "@shared/services/form-control/form-control.s
   selector: 'app-select',
   templateUrl: './select.component.html',
   imports: [
-    NgSelectModule,
     FormsModule,
     ReactiveFormsModule,
     LabelComponent,
@@ -29,9 +27,6 @@ export class SelectComponent implements OnInit, ControlValueAccessor {
   label = input('');
   placeholder = input('Selecione...');
   required = input(false);
-  multiple = input(false);
-  searchable = input(false);
-  clearable = input<boolean | undefined>(undefined);
   readOnly = input(false);
   options = input<SelectOption[]>([]);
 
@@ -47,7 +42,6 @@ export class SelectComponent implements OnInit, ControlValueAccessor {
   id = computed(() => generateValidHtmlId(this._id() || this.label()));
   isRequired = computed(() => this._hasRequiredValidator() || this.required());
   isReadOnly = computed(() => this._disabled() || this.readOnly());
-  isClearable = computed(() => this.clearable() === undefined ? !this.isRequired() : this.clearable());
 
   formControl?: FormControl;
   controlDir = inject(NgControl, { self: true, optional: true });
@@ -95,10 +89,6 @@ export class SelectComponent implements OnInit, ControlValueAccessor {
 
   onBlur(): void {
     this.onTouched();
-  }
-
-  onError(errorMessage: string): void {
-    this._errorMessage.set(errorMessage);
   }
 
   private readValidators(control: AbstractControl | null): void {

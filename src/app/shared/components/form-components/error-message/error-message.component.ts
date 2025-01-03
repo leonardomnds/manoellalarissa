@@ -5,7 +5,7 @@ import { ValidationService } from "@shared/services/validation/validation.servic
 @Component({
   standalone: true,
   selector: 'app-error-message',
-  template: '{{errorMessage()}}',
+  template: '{{errorMessage}}',
   host: {
     class: 'invalid-feedback'
   },
@@ -16,17 +16,19 @@ export class ErrorMessageComponent {
 
   control = input.required<FormControl>();
 
-  errorMessage = computed(() => {
+  get errorMessage(): string {
     const errors = this.control().errors;
 
     if (!errors) return '';
 
     for (const propertyName in errors) {
+
+      console.log({ propertyName,  })
       if (errors.hasOwnProperty(propertyName)) { continue; }
       return this._validationService.getErrorMessage(propertyName, errors[propertyName]);
     }
 
     return '';
-  });
+  }
 
 }
