@@ -1,4 +1,4 @@
-import { ExtraOptions, Routes } from '@angular/router';
+import { InMemoryScrollingOptions, Routes } from '@angular/router';
 
 export const appRoutes: Routes = [
   {
@@ -11,8 +11,7 @@ export const appRoutes: Routes = [
   },
 ];
 
-export const appRoutesConfig: ExtraOptions = {
-  scrollPositionRestoration: 'enabled',
+export const appRoutesInMemoryScrollingOptions: InMemoryScrollingOptions = {
   anchorScrolling: 'enabled',
-  scrollOffset: [0, 80]
+  scrollPositionRestoration: 'top',
 };
