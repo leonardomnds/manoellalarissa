@@ -5,8 +5,8 @@
       from="Left"
       [pixels]="30"
       class="rounded-circle p-2"
-      [class.cursor]="podeAbrirCadastroTermo()"
-      (click)="abrirCadastroTermoConsentimento()"
+      (mousedown)="abrirCadastroTermoConsentimento()"
+      (mouseup)="cancelarAberturaCadastroTermoConsentimento()"
     >
       <fa-icon [icon]="icons.hand" size="lg" />
     </div>
