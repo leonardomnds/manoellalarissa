@@ -13,7 +13,7 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 import { provideHttpClient, withInterceptorsFromDi } from "@angular/common/http";
 import { PageTitleService } from "@shared/services/page-title/page-title.service";
 import { provideAnimationsAsync } from "@angular/platform-browser/animations/async";
-import { SiteURL } from "@shared/injection-tokens";
+import { SiteURL, WINDOW } from "@shared/injection-tokens";
 import { isPlatformServer } from "@angular/common";
 
 import { registerLocaleData } from '@angular/common';
@@ -36,6 +36,13 @@ export const appConfig: ApplicationConfig = {
       useFactory: () => {
         const platformId = inject(PLATFORM_ID);
         return isPlatformServer(platformId) ? '' : window.location.origin;
+      },
+    },
+    {
+      provide: WINDOW,
+      useFactory: () => {
+        const platformId = inject(PLATFORM_ID);
+        return isPlatformServer(platformId) ? {} : window;
       },
     }
   ]

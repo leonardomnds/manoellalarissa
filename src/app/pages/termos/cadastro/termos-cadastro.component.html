@@ -1,0 +1,99 @@
+<form [formGroup]="form" class="page-wrapper d-flex flex-column gap-3">
+  <h3 class="text-rosa-claro">Criar Termo de Consentimento</h3>
+
+  <div class="card">
+    <div class="card-body d-flex flex-column gap-2">
+      <div class="row g-3">
+        <h5 class="col-12 border-bottom">
+          Dia e Horário
+        </h5>
+
+        <div class="col-sm-6 col-lg-4">
+          <app-select
+            label="Dia da Semana"
+            formControlName="diaSemana"
+            [options]="diaSemanaOptions"
+          >
+            <span prepend class="input-group-text">
+              <fa-icon [icon]="icons.dia" />
+            </span>
+          </app-select>
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+          <app-input
+            label="Horário"
+            placeholder="Informe o horário"
+            formControlName="horarioMarcado"
+            [mask]="horarioMask"
+          >
+            <span prepend class="input-group-text">
+              <fa-icon [icon]="icons.hora" />
+            </span>
+          </app-input>
+        </div>
+      </div>
+
+      <div class="row g-3 mt-n2">
+        <h5 class="col-12 border-bottom">
+          Honorários
+        </h5>
+
+        <div class="col-sm-6 col-lg-4">
+          <app-select
+            label="Frequência de Pagamento"
+            formControlName="frequenciaPagamento"
+            [options]="frequenciaPagamentoOptions"
+          >
+            <span prepend class="input-group-text">
+              <fa-icon [icon]="icons.frequencia" />
+            </span>
+          </app-select>
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+          <app-input
+            label="Valor da Sessão"
+            placeholder="Informe o valor combinado"
+            formControlName="valor"
+            [mask]="moneyMask"
+          >
+            <span prepend class="input-group-text">
+              <fa-icon [icon]="icons.valor" />
+            </span>
+          </app-input>
+        </div>
+      </div>
+
+      <div [ngbCollapse]="form.invalid">
+        <div class="d-flex align-items-center gap-2 mt-2">
+
+          <div class="flex-grow-1 flex-sm-grow-0 position-relative">
+            <button
+              type="button"
+              (click)="copiarLink()"
+              [disabled]="isLinkCopiado()"
+              class="btn btn-rosa-escuro"
+            >
+              Copiar Link
+            </button>
+
+            @if (isLinkCopiado()) {
+              <span class="badge rounded-pill bg-success position-absolute top-0 start-50 translate-middle">
+                Copiado
+              </span>
+            }
+          </div>
+
+          <button
+            type="button"
+            (click)="abrirLink()"
+            class="btn btn-outline-rosa-escuro flex-grow-1 flex-sm-grow-0"
+          >
+            Abrir Link
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

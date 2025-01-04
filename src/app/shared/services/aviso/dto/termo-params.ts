@@ -1,6 +1,6 @@
 import { DiaSemanaEnum, FrequenciaPagamentoEnum } from "@shared/services/aviso/dto";
 
-export interface AvisoParams {
+export interface TermoParams {
   valor: number,
   diaSemana: DiaSemanaEnum,
   frequenciaPagamento: FrequenciaPagamentoEnum,
