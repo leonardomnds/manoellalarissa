@@ -12,7 +12,7 @@ export const contentRoutes: Routes = [
       },
       {
         path: 'termos',
-        loadChildren: () => import('@pages/avisos/avisos.routes').then((r) => r.avisosRoutes),
+        loadChildren: () => import('@pages/termos/termos.routes').then((r) => r.termosRoutes),
       },
       {
         path: 'form',

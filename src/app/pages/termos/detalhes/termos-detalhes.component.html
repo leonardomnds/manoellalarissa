@@ -45,9 +45,9 @@
       <h5 class="card-title">Honorários</h5>
 
       @if (valorSessao(); as valor) {
-        <span>
-          O valor de cada sessão é
-          <span class="fw-semibold">{{ valor | currency }}</span>.
+      <span>
+        O valor de cada sessão é
+        <span class="fw-semibold">{{ valor | currency }}</span>.
         </span>
       }
 
@@ -61,7 +61,10 @@
       <span>
         Haverá um
         <span class="fw-semibold">reajuste anual</span>
-        de 10% no valor das sessões.
+        pela variação do IPCA ou índice que venha a substituir.
+      </span>
+
+      <span>
         Qualquer alteração será previamente discutida e acordada entre nós.
       </span>
     </div>
