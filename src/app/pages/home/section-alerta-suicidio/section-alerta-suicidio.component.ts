@@ -17,21 +17,20 @@ export class SectionAlertaSuicidioComponent {
 
   private router = inject(Router);
 
-  private _holdTimeout = signal<NodeJS.Timeout | null>(null);
+  private _clickCount = signal<number>(0);
+  private _clickTimeOut = signal<NodeJS.Timeout | null>(null);
 
+  onClick(): void {
+    clearTimeout(this._clickTimeOut()!);
+    this._clickCount.update((prev) => prev + 1);
+    this._clickTimeOut.set(setTimeout(() => this._clickCount.set(0), 1000));
 
-  abrirCadastroTermoConsentimento(): void {
-    console.log('abrirCadastroTermoConsentimento')
-    this._holdTimeout.set(setTimeout(() => {
+    if (this._clickCount() < 5) {
+      return;
+    }
 
-      console.log('aaaaaa')
-      this.router.navigate(['/termos', 'novo'])
-    }, 3000));
-  }
-
-  cancelarAberturaCadastroTermoConsentimento(): void {
-    console.log('cancelarAberturaCadastroTermoConsentimento')
-    clearTimeout(this._holdTimeout()!);
+    this._clickCount.set(0);
+    this.router.navigate(['/termos', 'novo']);
   }
 
 }
