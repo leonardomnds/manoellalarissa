@@ -15,24 +15,23 @@ export class SectionAlertaSuicidioComponent {
 
   icons = ICONS;
 
-  private _podeAbrirCadastroTermo = signal<boolean>(false);
-  podeAbrirCadastroTermo = this._podeAbrirCadastroTermo.asReadonly();
-
   private router = inject(Router);
 
+  private _holdTimeout = signal<NodeJS.Timeout | null>(null);
+
+
   abrirCadastroTermoConsentimento(): void {
-    if (!this._podeAbrirCadastroTermo()) { return; }
-    this.router.navigate(['/termos', 'novo']);
+    console.log('abrirCadastroTermoConsentimento')
+    this._holdTimeout.set(setTimeout(() => {
+
+      console.log('aaaaaa')
+      this.router.navigate(['/termos', 'novo'])
+    }, 3000));
   }
 
-  @HostListener('document:keydown', ['$event'])
-  protected onKeyDown(event: KeyboardEvent) {
-    this._podeAbrirCadastroTermo.set(event.ctrlKey && event.shiftKey);
-  }
-
-  @HostListener('document:keyup', ['$event'])
-  protected onKeyUp(event: KeyboardEvent) {
-    this._podeAbrirCadastroTermo.set(!event.ctrlKey && !event.shiftKey);
+  cancelarAberturaCadastroTermoConsentimento(): void {
+    console.log('cancelarAberturaCadastroTermoConsentimento')
+    clearTimeout(this._holdTimeout()!);
   }
 
 }
