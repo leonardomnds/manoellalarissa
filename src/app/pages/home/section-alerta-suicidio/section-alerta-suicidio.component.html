@@ -1,6 +1,13 @@
 <section class="alerta-suicidio bg-rosa-escuro text-rosa-claro">
   <div class="page-wrapper center gap-4 flex-column flex-md-row">
-    <div isVisible from="Left" [pixels]="30" class="rounded-circle p-2">
+    <div
+      isVisible
+      from="Left"
+      [pixels]="30"
+      class="rounded-circle p-2"
+      [class.cursor]="podeAbrirCadastroTermo()"
+      (click)="abrirCadastroTermoConsentimento()"
+    >
       <fa-icon [icon]="icons.hand" size="lg" />
     </div>
 
