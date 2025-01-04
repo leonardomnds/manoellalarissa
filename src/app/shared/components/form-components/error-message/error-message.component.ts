@@ -1,4 +1,4 @@
-import { Component, computed, inject, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { FormControl } from "@angular/forms";
 import { ValidationService } from "@shared/services/validation/validation.service";
 
@@ -22,9 +22,7 @@ export class ErrorMessageComponent {
     if (!errors) return '';
 
     for (const propertyName in errors) {
-
-      console.log({ propertyName,  })
-      if (errors.hasOwnProperty(propertyName)) { continue; }
+      if (!errors.hasOwnProperty(propertyName)) { continue; }
       return this._validationService.getErrorMessage(propertyName, errors[propertyName]);
     }
 

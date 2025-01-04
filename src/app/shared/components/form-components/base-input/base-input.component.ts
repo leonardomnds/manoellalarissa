@@ -1,4 +1,4 @@
-import {Component, computed, inject, input, OnInit, output, signal} from '@angular/core';
+import { Component, computed, effect, inject, input, model, OnInit, output, signal } from '@angular/core';
 import {ControlValueAccessor, NgControl, AbstractControl, FormControl} from '@angular/forms';
 import {faInfoCircle} from "@fortawesome/free-solid-svg-icons";
 import {FormControlService} from "@shared/services/form-control/form-control.service";
@@ -21,9 +21,8 @@ export class BaseInputComponent implements OnInit, ControlValueAccessor {
   private readonly _minLength = signal<number | null>(null);
   private readonly _maxLength = signal<number | null>(null);
 
-  value = signal('');
+  value = model('');
   disabled = this._disabled.asReadonly();
-  hasRequiredValidator = this._hasRequiredValidator.asReadonly();
   minLength = this._minLength.asReadonly();
   maxLength = this._maxLength.asReadonly();
   id = computed(() => generateValidHtmlId(this._id() || this.label()));
@@ -37,6 +36,11 @@ export class BaseInputComponent implements OnInit, ControlValueAccessor {
   private onTouched: () => void = () => {};
 
   constructor() {
+    effect(() => {
+      if (!this.onChange) { return; }
+      this.onChange(this.value());
+    });
+
     if (!this.controlDir) { return; }
     this.controlDir.valueAccessor = this;
   }
@@ -65,16 +69,6 @@ export class BaseInputComponent implements OnInit, ControlValueAccessor {
 
   setDisabledState?(isDisabled: boolean): void {
     this._disabled.set(isDisabled);
-  }
-
-  onInput(event: Event): void {
-    if (!this.onChange) { return; }
-    const inputEl = event.target as HTMLInputElement;
-    if (inputEl.inputmask){
-      this.onChange(inputEl.inputmask.unmaskedvalue());
-      return;
-    }
-    this.onChange(inputEl.value);
   }
 
   onBlur(): void {

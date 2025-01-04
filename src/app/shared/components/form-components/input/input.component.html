@@ -22,7 +22,6 @@
     [attr.minlength]="minLength()"
     [attr.maxlength]="maxLength()"
     [inputMask]="mask()"
-    (input)="onInput($event)"
     (blur)="onBlur()"
     (keydown.enter)="onEnterPressed.emit()">
 

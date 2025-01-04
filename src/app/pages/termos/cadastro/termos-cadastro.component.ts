@@ -7,8 +7,11 @@ import { InputComponent } from "@components/form-components/input/input.componen
 import { InputMaskService } from "@shared/services/input-mask/input-mask.service";
 import { LabelComponent } from "@components/form-components/label/label.component";
 import { InputMaskModule } from "@ngneat/input-mask";
-import { DOCUMENT, JsonPipe } from "@angular/common";
+import { DOCUMENT } from "@angular/common";
 import { WINDOW } from "@shared/injection-tokens";
+import { faBrazilianRealSign, faCalendarDay, faClock, faHandHoldingDollar } from "@fortawesome/free-solid-svg-icons";
+import { FaIconComponent } from "@fortawesome/angular-fontawesome";
+import { LocalStorageKey, LocalStorageService } from "@shared/services/local-storage/local-storage.service";
 
 @Component({
   selector: 'app-termos-cadastro',
@@ -19,7 +22,7 @@ import { WINDOW } from "@shared/injection-tokens";
     ReactiveFormsModule,
     LabelComponent,
     InputMaskModule,
-    JsonPipe
+    FaIconComponent,
   ],
   templateUrl: './termos-cadastro.component.html'
 })
@@ -28,24 +31,23 @@ export class TermosCadastroComponent {
   private window = inject(WINDOW);
   private document = inject(DOCUMENT);
   private fb = inject(FormBuilder);
-  private maskService = inject(InputMaskService);
   private termoService = inject(TermoService);
+  private maskService = inject(InputMaskService);
+  private localStorageService = inject(LocalStorageService);
+
   protected readonly diaSemanaOptions = diaSemanaOptions;
   protected readonly frequenciaPagamentoOptions = frequenciaPagamentoOptions;
 
   form = this.fb.group({
     diaSemana: [null, [Validators.required]],
+    horarioMarcado: [null, [Validators.required]],
     frequenciaPagamento: [null, [Validators.required]],
-    valor: [0, [Validators.required, Validators.min(49.99)]],
-    horarioMarcado: this.fb.nonNullable.group({
-      hora: ['00'],
-      minuto: ['00'],
-    })
+    valor: [this.localStorageService.get(LocalStorageKey.ValorSessao) || 0, [Validators.required, Validators.min(49.99)]],
   });
 
+  icons = ICONS;
   moneyMask = this.maskService.currencyMask();
-  hourMask = this.maskService.numericMask({ alias: 'datetime', inputFormat: 'HH', placeholder: '_' });
-  minuteMask = this.maskService.numericMask({ alias: 'datetime', inputFormat: 'MM', placeholder: '_' });
+  horarioMask = this.maskService.horarioMask();
 
   copiarLink(): void {
     const url = this.getUrl();
@@ -54,14 +56,13 @@ export class TermosCadastroComponent {
 
     const el = this.document.createElement('textarea');
     el.textContent = url;
-    el.style.position = 'fixed';
     this.document.body.appendChild(el);
     el.select();
 
     try {
       this.document.execCommand('copy');
     } finally {
-      this.document.removeChild(el);
+      this.document.body.removeChild(el);
     }
   }
 
@@ -75,6 +76,16 @@ export class TermosCadastroComponent {
 
   private getUrl() {
     if (this.form.invalid) { return; }
+
+    this.localStorageService.set(LocalStorageKey.ValorSessao, this.form.value.valor);
+
     return this.termoService.getUrl(this.form.value as any)
   }
+}
+
+const ICONS = {
+  hora: faClock,
+  dia: faCalendarDay,
+  valor: faBrazilianRealSign,
+  frequencia: faHandHoldingDollar,
 }

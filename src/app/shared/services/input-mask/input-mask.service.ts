@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { createMask, InputmaskOptions } from '@ngneat/input-mask';
 import Options = Inputmask.Options;
+import { HorarioMarcado } from "@shared/services/aviso/dto";
 
 @Injectable({
   providedIn: 'root'
@@ -62,6 +63,30 @@ export class InputMaskService {
       rightAlign: false,
       onBeforeMask: this.numberMaskFix,
       ...options
+    });
+  }
+
+  horarioMask(): InputmaskOptions<HorarioMarcado | null> {
+    return createMask({
+      alias: 'datetime',
+      inputType: 'number',
+      inputFormat: 'HH:MM',
+      inputmode: 'numeric',
+      showMaskOnHover: false,
+      parser: (value: string) => {
+        const parts = `${value}`.split(':').filter((v) => !isNaN(v as any));
+
+        console.log(value, parts, {
+          hora: parseInt(parts[0], 10),
+          minuto: parseInt(parts[1], 10),
+        })
+        if (parts.length !== 2) { return null; }
+
+        return {
+          hora: parseInt(parts[0], 10),
+          minuto: parseInt(parts[1], 10),
+        }
+      },
     });
   }
 
