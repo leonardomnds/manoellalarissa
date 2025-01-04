@@ -8,7 +8,7 @@
           Dia e Horário
         </h5>
 
-        <div class="col-6">
+        <div class="col-sm-6 col-lg-4">
           <app-select
             label="Dia da Semana"
             formControlName="diaSemana"
@@ -20,10 +20,10 @@
           </app-select>
         </div>
 
-        <div class="col-6">
+        <div class="col-sm-6 col-lg-4">
           <app-input
             label="Horário"
-            placeholder="Informe o horário marcado"
+            placeholder="Informe o horário"
             formControlName="horarioMarcado"
             [mask]="horarioMask"
           >
@@ -34,12 +34,12 @@
         </div>
       </div>
 
-      <div class="row g-3 mt-0">
+      <div class="row g-3 mt-n2">
         <h5 class="col-12 border-bottom">
           Honorários
         </h5>
 
-        <div class="col-6">
+        <div class="col-sm-6 col-lg-4">
           <app-select
             label="Frequência de Pagamento"
             formControlName="frequenciaPagamento"
@@ -51,7 +51,7 @@
           </app-select>
         </div>
 
-        <div class="col-6">
+        <div class="col-sm-6 col-lg-4">
           <app-input
             label="Valor da Sessão"
             placeholder="Informe o valor combinado"
@@ -65,14 +65,34 @@
         </div>
       </div>
 
-      <div class="d-flex align-items-center gap-2 mt-3">
-        <button type="button" (click)="copiarLink()" class="btn btn-rosa-escuro">
-          Copiar Link
-        </button>
+      <div [ngbCollapse]="form.invalid">
+        <div class="d-flex align-items-center gap-2 mt-2">
 
-        <button type="button" (click)="abrirLink()" class="btn btn-rosa-escuro">
-          Abrir Link
-        </button>
+          <div class="flex-grow-1 flex-sm-grow-0 position-relative">
+            <button
+              type="button"
+              (click)="copiarLink()"
+              [disabled]="isLinkCopiado()"
+              class="btn btn-rosa-escuro"
+            >
+              Copiar Link
+            </button>
+
+            @if (isLinkCopiado()) {
+              <span class="badge rounded-pill bg-success position-absolute top-0 start-50 translate-middle">
+                Copiado
+              </span>
+            }
+          </div>
+
+          <button
+            type="button"
+            (click)="abrirLink()"
+            class="btn btn-outline-rosa-escuro flex-grow-1 flex-sm-grow-0"
+          >
+            Abrir Link
+          </button>
+        </div>
       </div>
     </div>
   </div>

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { SelectComponent } from "@components/form-components/select/select.component";
 import { FormBuilder, ReactiveFormsModule, Validators } from "@angular/forms";
 import { diaSemanaOptions, frequenciaPagamentoOptions } from "@shared/services/aviso/dto";
@@ -12,6 +12,7 @@ import { WINDOW } from "@shared/injection-tokens";
 import { faBrazilianRealSign, faCalendarDay, faClock, faHandHoldingDollar } from "@fortawesome/free-solid-svg-icons";
 import { FaIconComponent } from "@fortawesome/angular-fontawesome";
 import { LocalStorageKey, LocalStorageService } from "@shared/services/local-storage/local-storage.service";
+import { NgbCollapse, NgbCollapseModule } from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-termos-cadastro',
@@ -23,6 +24,7 @@ import { LocalStorageKey, LocalStorageService } from "@shared/services/local-sto
     LabelComponent,
     InputMaskModule,
     FaIconComponent,
+    NgbCollapseModule,
   ],
   templateUrl: './termos-cadastro.component.html'
 })
@@ -49,6 +51,9 @@ export class TermosCadastroComponent {
   moneyMask = this.maskService.currencyMask();
   horarioMask = this.maskService.horarioMask();
 
+  private _isLinkCopiado = signal<boolean>(false);
+  isLinkCopiado = this._isLinkCopiado.asReadonly();
+
   copiarLink(): void {
     const url = this.getUrl();
 
@@ -61,6 +66,8 @@ export class TermosCadastroComponent {
 
     try {
       this.document.execCommand('copy');
+      this._isLinkCopiado.set(true);
+      setTimeout(() => this._isLinkCopiado.set(false), 1000);
     } finally {
       this.document.body.removeChild(el);
     }

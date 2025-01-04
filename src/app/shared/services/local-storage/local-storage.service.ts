@@ -18,22 +18,22 @@ export class LocalStorageService {
   }
 
   get<T = string>(key: LocalStorageKey): T | null {
-    const value = this.window.localStorage.getItem(this._prefix() + key);
+    const value = this.window?.localStorage?.getItem(this._prefix() + key);
 
-    if (value === null) {
+    if ([null, undefined].includes(value as any)) {
       return null;
     }
 
-    return JSON.parse(value);
+    return JSON.parse(value!);
   }
 
   set<T = any>(key: LocalStorageKey, value: T): void {
-    this.window.localStorage.setItem(this._prefix() + key, JSON.stringify(value ?? null));
+    this.window?.localStorage?.setItem(this._prefix() + key, JSON.stringify(value ?? null));
     this.atualizarState();
   }
 
   remove(key: LocalStorageKey): void {
-    this.window.localStorage.removeItem(this._prefix() + key);
+    this.window?.localStorage?.removeItem(this._prefix() + key);
     this.atualizarState();
   }
 

@@ -5,9 +5,9 @@ import { ValidationService } from "@shared/services/validation/validation.servic
 @Component({
   standalone: true,
   selector: 'app-error-message',
-  template: '{{errorMessage}}',
+  template: '{{errorMessage}} &nbsp;',
   host: {
-    class: 'invalid-feedback'
+    class: 'd-block invalid-feedback'
   },
 })
 export class ErrorMessageComponent {
