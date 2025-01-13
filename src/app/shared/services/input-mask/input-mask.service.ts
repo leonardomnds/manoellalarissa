@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { createMask, InputmaskOptions } from '@ngneat/input-mask';
-import Options = Inputmask.Options;
 import { HorarioMarcado } from "@shared/services/aviso/dto";
 
 @Injectable({
@@ -38,7 +37,6 @@ export class InputMaskService {
       inputmode: 'numeric',
       clearMaskOnLostFocus: false,
       positionCaretOnClick: 'none',
-      onBeforeMask: this.numberMaskFix,
       parser: (value: string) => {
         return +value.replace(options.suffix ?? '', '').replace(/\./g, '').replace(',', '.')
       },
@@ -57,11 +55,10 @@ export class InputMaskService {
       max: 99999999.99,
       digitsOptional: false,
       clearMaskOnLostFocus: false,
-      numericInput: false,
+      numericInput: true,
       autoUnmask: true,
       unmaskAsNumber: true,
       rightAlign: false,
-      onBeforeMask: this.numberMaskFix,
       ...options
     });
   }
@@ -76,10 +73,6 @@ export class InputMaskService {
       parser: (value: string) => {
         const parts = `${value}`.split(':').filter((v) => !isNaN(v as any));
 
-        console.log(value, parts, {
-          hora: parseInt(parts[0], 10),
-          minuto: parseInt(parts[1], 10),
-        })
         if (parts.length !== 2) { return null; }
 
         return {
@@ -88,42 +81,5 @@ export class InputMaskService {
         }
       },
     });
-  }
-
-  private numberMaskFix(initialValue: any, _: Options): string {
-    const el = (this as any)['el'];
-    if (el.isFixedApplied) {
-      if (typeof initialValue === 'string') {
-        return initialValue.replace('.', '').replace(',', '.');
-      } else {
-        return initialValue.toString();
-      }
-    }
-    el.isFixedApplied = true;
-
-    const inputElement = el as HTMLInputElement;
-    const getValueFn = (): string => (inputElement.inputmask as any)['_valueGet']() as string;
-
-    inputElement.addEventListener("keydown", function(event) {
-      if (event.key !== "Backspace" && event.key !== "Delete") { return; }
-      let caretPos = inputElement.selectionStart;
-      if (caretPos == null) return;
-      const valorInput = getValueFn().split('').toReversed();
-      const indexRadix = valorInput.indexOf(',');
-      if (indexRadix === -1) return;
-      if (caretPos < indexRadix) return;
-      inputElement.dispatchEvent(new Event('input', { bubbles: true }));
-    });
-
-    inputElement.addEventListener("mousedown", function(_) {
-      if (document.activeElement === inputElement) { return; }
-      const commaIndex = getValueFn().split('').toReversed().join('').indexOf(",");
-      if (commaIndex === -1) { return; }
-      setTimeout(() => {
-        inputElement.setSelectionRange(commaIndex, commaIndex);
-      }, 80);
-    });
-
-    return initialValue;
   }
 }
