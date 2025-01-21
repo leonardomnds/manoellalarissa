@@ -2,6 +2,8 @@
 
 Este projeto é um site desenvolvido para a psicóloga Manoella Larissa, utilizando Angular com geração de site estático (SSG - Static Site Generation) e publicado no GitHub Pages.
 
+![image](src/assets/images/landing-page.png)
+
 ## Tecnologias Utilizadas
 
 - **Angular**: Framework de desenvolvimento web utilizado para construir a interface do usuário.
